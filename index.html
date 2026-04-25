@@ -3,167 +3,151 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crest MGA — Specialist Risk Partners</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet"/>
+  <title>Veritas MGA — Precision Risk, Trusted Capital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:        #06111f;
-      --navy-2:      #0b1e38;
-      --navy-3:      #102848;
-      --blue:        #1758e0;
-      --blue-hi:     #4a7fff;
-      --blue-glow:   rgba(23,88,224,0.4);
-      --teal:        #0891b2;
-      --gold:        #b07d1a;
-      --gold-hi:     #daa84e;
-      --white:       #ffffff;
-      --paper:       #f0f4fa;
-      --muted:       #607080;
-      --card-bg:     #ffffff;
-      --border:      #dde6f4;
-      --divider:     rgba(255,255,255,0.07);
-      --r-sm:        8px;
-      --r-md:        14px;
-      --r-lg:        22px;
+      --ink:        #05101e;
+      --ink-2:      #0a1c34;
+      --ink-3:      #0f2848;
+      --blue:       #1460e8;
+      --blue-hi:    #4a82ff;
+      --blue-pale:  rgba(20,96,232,0.38);
+      --teal:       #0694b4;
+      --gold:       #b27820;
+      --gold-hi:    #dcaa50;
+      --white:      #ffffff;
+      --surface:    #eef2f9;
+      --card:       #ffffff;
+      --muted:      #5e7288;
+      --border-lt:  #d6e2f2;
+      --divide:     rgba(255,255,255,0.07);
+      --rad-sm:     8px;
+      --rad-md:     14px;
+      --rad-lg:     22px;
+      --rad-xl:     30px;
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--navy); overflow-x: hidden; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(20,96,232,0.18); }
 
-    ::selection { background: rgba(23,88,224,0.2); }
-
-    /* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════════════
        NAVBAR
-    ═══════════════════════════════════════════ */
+    ═══════════════════════════════════════════════════ */
     .nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      inset: 0 0 auto 0;
       z-index: 999;
-      height: 72px;
+      height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 6%;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
+      transition: background 0.45s, box-shadow 0.45s;
     }
-    .nav.pinned {
-      background: rgba(6,17,31,0.97);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      box-shadow: 0 1px 0 var(--divider), 0 16px 56px rgba(0,0,0,0.6);
+    .nav.stuck {
+      background: rgba(5,16,30,0.97);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      box-shadow: 0 1px 0 var(--divide), 0 16px 60px rgba(0,0,0,0.6);
     }
 
     /* Logo */
-    .logo-link {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
       text-decoration: none;
       flex-shrink: 0;
     }
-    .logo-mark {
-      width: 44px; height: 44px; flex-shrink: 0;
-    }
-    .logo-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      line-height: 1;
-    }
-    .logo-name {
-      font-size: 1.18rem;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 0.08em;
+    .brand-icon { width: 46px; height: 46px; flex-shrink: 0; }
+    .brand-text { display: flex; flex-direction: column; gap: 3px; line-height: 1; }
+    .brand-name {
+      font-size: 1.2rem; font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
-    .logo-descriptor {
-      font-size: 0.575rem;
-      font-weight: 600;
+    .brand-sub {
+      font-size: 0.56rem; font-weight: 600;
       color: var(--gold-hi);
       letter-spacing: 0.3em;
       text-transform: uppercase;
     }
 
-    /* Menu */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
+    /* Nav links */
+    .nav-list {
+      display: flex; align-items: center;
+      gap: 38px; list-style: none;
     }
-    .nav-menu a {
-      color: rgba(255,255,255,0.65);
+    .nav-list a {
+      color: rgba(255,255,255,0.62);
       text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
+      font-size: 0.875rem; font-weight: 500;
       letter-spacing: 0.01em;
       transition: color 0.22s;
       white-space: nowrap;
     }
-    .nav-menu a:hover { color: #fff; }
-    .nav-btn {
+    .nav-list a:hover { color: var(--white); }
+    .nav-cta {
       background: var(--blue) !important;
-      color: #fff !important;
-      padding: 9px 22px;
-      border-radius: var(--r-sm);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: var(--rad-sm);
       font-weight: 700 !important;
-      box-shadow: 0 4px 20px var(--blue-glow);
+      box-shadow: 0 4px 22px var(--blue-pale);
       transition: transform 0.2s, box-shadow 0.2s, background 0.2s !important;
     }
-    .nav-btn:hover {
+    .nav-cta:hover {
       background: var(--blue-hi) !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(74,127,255,0.55) !important;
+      box-shadow: 0 10px 32px rgba(74,130,255,0.55) !important;
     }
 
     /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      border: none;
-      background: none;
-      padding: 5px;
-      z-index: 1001;
+    .burger {
+      display: none; flex-direction: column;
+      gap: 5px; cursor: pointer;
+      border: none; background: none; padding: 5px;
     }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: #fff; border-radius: 2px;
+    .burger span {
+      display: block; width: 25px; height: 2px;
+      background: var(--white); border-radius: 2px;
       transition: all 0.3s ease;
     }
-    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .burger.on span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.on span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .burger.on span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .nav-menu.open {
-      display: flex !important;
-      flex-direction: column;
+    .nav-list.open {
+      display: flex !important; flex-direction: column;
       position: fixed;
-      top: 72px; left: 0; right: 0; bottom: 0;
-      background: rgba(6,17,31,0.99);
+      top: 74px; left: 0; right: 0; bottom: 0;
+      background: rgba(5,16,30,0.99);
       backdrop-filter: blur(24px);
-      padding: 36px 6%;
-      gap: 28px;
-      align-items: flex-start;
-      border-top: 1px solid var(--divider);
+      padding: 36px 6% 50px;
+      gap: 28px; align-items: flex-start;
+      border-top: 1px solid var(--divide);
       overflow-y: auto;
     }
-    .nav-menu.open a { font-size: 1.1rem; color: rgba(255,255,255,0.75); }
-    .nav-menu.open .nav-btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 14px;
+    .nav-list.open a { font-size: 1.08rem; }
+    .nav-list.open .nav-cta {
+      display: block; width: 100%;
+      text-align: center; padding: 14px;
       font-size: 1rem !important;
     }
 
-    /* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════════════
        HERO
-    ═══════════════════════════════════════════ */
+    ═══════════════════════════════════════════════════ */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -172,293 +156,256 @@
       overflow: hidden;
     }
 
-    /* ── Background canvas ── */
-    .hero-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
+    /* ── BACKGROUND IMAGE (pure CSS + inline SVG) ── */
+    .hero-bg { position: absolute; inset: 0; z-index: 0; }
 
-    .canvas-base {
+    /* Deep night sky base */
+    .bg-sky {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg,
-        #040d1c 0%,
-        #071628 30%,
-        #0c2244 62%,
-        #050e1c 100%
+      background: linear-gradient(165deg,
+        #020b18 0%,
+        #061525 28%,
+        #0b2244 60%,
+        #040d1c 100%
       );
     }
 
-    /* SVG scene fills the canvas */
-    .canvas-scene {
+    /* The big SVG scene */
+    .bg-svg {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0; width: 100%; height: 100%;
+      object-fit: cover;
     }
 
-    /* Colour overlays */
-    .canvas-vignette {
+    /* Overlay layers */
+    .bg-vignette {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 60% 70% at 10% 50%,
-          rgba(6,17,31,0.95) 0%,
-          rgba(6,17,31,0.65) 45%,
+        linear-gradient(108deg,
+          rgba(5,16,30,0.97) 0%,
+          rgba(5,16,30,0.78) 38%,
+          rgba(5,16,30,0.18) 72%,
           transparent 100%),
-        radial-gradient(ellipse 100% 40% at 50% 100%,
-          rgba(6,17,31,0.9) 0%,
-          transparent 70%);
+        linear-gradient(to top,
+          rgba(5,16,30,0.94) 0%,
+          transparent 32%);
     }
-    .canvas-grid {
+    .bg-grid {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px);
-      background-size: 80px 80px;
+        linear-gradient(rgba(255,255,255,0.017) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.017) 1px, transparent 1px);
+      background-size: 76px 76px;
     }
-    .canvas-glow-r {
-      position: absolute;
-      top: -20%; right: -10%;
-      width: 900px; height: 900px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(23,88,224,0.2) 0%, transparent 62%);
+    .bg-bloom-r {
+      position: absolute; top: -18%; right: -8%;
+      width: 880px; height: 880px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(20,96,232,0.19) 0%, transparent 62%);
       pointer-events: none;
     }
-    .canvas-glow-b {
-      position: absolute;
-      bottom: 0; left: 50%;
+    .bg-bloom-b {
+      position: absolute; bottom: 0; left: 50%;
       transform: translateX(-50%);
-      width: 1200px; height: 300px;
-      background: radial-gradient(ellipse 80% 100% at 50% 100%,
-        rgba(23,88,224,0.22) 0%, transparent 70%);
+      width: 1300px; height: 320px;
+      background: radial-gradient(ellipse 75% 100% at 50% 100%,
+        rgba(20,96,232,0.2) 0%, transparent 68%);
       pointer-events: none;
     }
-    .canvas-fade-bottom {
-      position: absolute;
-      bottom: 0; left: 0; right: 0; height: 260px;
-      background: linear-gradient(to top, var(--paper) 0%, transparent 100%);
+    .bg-fade-bottom {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 280px;
+      background: linear-gradient(to top, var(--surface) 0%, transparent 100%);
     }
 
     /* ── Hero layout ── */
-    .hero-body {
-      position: relative;
-      z-index: 10;
-      width: 100%;
-      max-width: 1300px;
+    .hero-wrap {
+      position: relative; z-index: 10;
+      width: 100%; max-width: 1320px;
       margin: 0 auto;
-      padding: 148px 6% 108px;
+      padding: 152px 6% 110px;
       display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 80px;
+      grid-template-columns: 1fr 420px;
+      gap: 72px;
       align-items: center;
     }
 
-    .hero-left  { animation: slideUp 0.9s 0.05s ease both; }
-    .hero-right { animation: slideUp 0.9s 0.2s  ease both; }
+    .hero-left  { animation: upIn 0.95s 0.05s ease both; }
+    .hero-right { animation: upIn 0.95s 0.22s ease both; }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(36px); }
+    @keyframes upIn {
+      from { opacity: 0; transform: translateY(38px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Eyebrow */
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(176,125,26,0.12);
-      border: 1px solid rgba(218,168,78,0.3);
+    /* Eyebrow badge */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(178,120,32,0.13);
+      border: 1px solid rgba(220,170,80,0.32);
       color: var(--gold-hi);
-      font-size: 0.71rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 7px 16px 7px 12px;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 7px 17px 7px 13px;
       border-radius: 100px;
       margin-bottom: 30px;
     }
-    .eyebrow-pip {
+    .ey-pip {
       width: 7px; height: 7px;
-      background: var(--gold-hi);
-      border-radius: 50%;
+      background: var(--gold-hi); border-radius: 50%;
       flex-shrink: 0;
-      animation: pipPulse 2.5s infinite;
+      animation: pipAnim 2.6s infinite;
     }
-    @keyframes pipPulse {
-      0%,100% { opacity:1; transform:scale(1); box-shadow: 0 0 0 0 rgba(218,168,78,0.6); }
-      50%     { opacity:.5; transform:scale(1.5); box-shadow: 0 0 0 6px rgba(218,168,78,0); }
+    @keyframes pipAnim {
+      0%,100%{ opacity:1; transform:scale(1); box-shadow:0 0 0 0 rgba(220,170,80,.7); }
+      50%    { opacity:.5; transform:scale(1.5); box-shadow:0 0 0 6px rgba(220,170,80,0); }
     }
 
     /* Headline */
     .hero-h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 800;
-      line-height: 1.08;
-      color: #fff;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.9rem, 5.2vw, 4.6rem);
+      font-weight: 400;
+      line-height: 1.07;
+      color: var(--white);
       letter-spacing: -0.015em;
       margin-bottom: 26px;
     }
-    .h1-sky {
+    .h1-italic { font-style: italic; }
+    .h1-grad {
       font-style: italic;
-      color: transparent;
-      background: linear-gradient(90deg, #6aaeff 0%, #aad2ff 100%);
+      background: linear-gradient(90deg, #6aaaff, #aad4ff);
       -webkit-background-clip: text;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .h1-gold { color: var(--gold-hi); }
 
-    /* Body copy */
-    .hero-body-copy {
-      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
-      color: rgba(255,255,255,0.55);
-      line-height: 1.88;
-      max-width: 500px;
+    /* Lead paragraph */
+    .hero-lead {
+      font-size: clamp(0.95rem, 1.4vw, 1.06rem);
+      color: rgba(255,255,255,0.54);
+      line-height: 1.86;
+      max-width: 510px;
       margin-bottom: 44px;
     }
 
-    /* CTA buttons */
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 64px;
-    }
-    .btn-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 15px 32px;
-      border-radius: var(--r-sm);
+    /* CTAs */
+    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:64px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.95rem; font-weight: 700;
+      padding: 15px 34px; border-radius: var(--rad-sm);
       text-decoration: none;
       transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
       white-space: nowrap;
     }
-    .btn-cta svg {
-      width: 15px; height: 15px;
-      flex-shrink: 0;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .btn svg {
+      width:15px; height:15px; flex-shrink:0;
+      fill:none; stroke:currentColor;
+      stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;
     }
-    .btn-solid {
-      background: var(--blue);
-      color: #fff;
-      box-shadow: 0 6px 28px var(--blue-glow);
+    .btn-fill {
+      background: var(--blue); color: var(--white);
+      box-shadow: 0 6px 28px var(--blue-pale);
     }
-    .btn-solid:hover {
+    .btn-fill:hover {
       background: var(--blue-hi);
       transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(74,127,255,0.55);
+      box-shadow: 0 14px 42px rgba(74,130,255,.55);
     }
-    .btn-ghost {
+    .btn-outline {
       background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.19);
       color: rgba(255,255,255,0.82);
     }
-    .btn-ghost:hover {
+    .btn-outline:hover {
       background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.38);
-      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+      color: var(--white);
     }
 
-    /* Metrics row */
-    .hero-metrics {
+    /* Metrics */
+    .hero-stats {
       display: flex;
       border-top: 1px solid rgba(255,255,255,0.09);
       padding-top: 40px;
     }
-    .metric {
-      flex: 1;
+    .stat {
+      flex:1;
       border-right: 1px solid rgba(255,255,255,0.09);
       padding-right: 28px;
     }
-    .metric:last-child  { border-right: none; padding-right: 0; padding-left: 28px; }
-    .metric:nth-child(2){ padding: 0 28px; }
-    .metric-n {
-      display: block;
-      font-size: 2rem;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: -0.05em;
-      line-height: 1;
-      margin-bottom: 6px;
+    .stat:last-child  { border-right:none; padding-right:0; padding-left:28px; }
+    .stat:nth-child(2){ padding:0 28px; }
+    .stat-v {
+      display:block;
+      font-size:1.95rem; font-weight:900;
+      color:var(--white); letter-spacing:-0.05em; line-height:1;
+      margin-bottom:7px;
     }
-    .metric-n em { color: var(--blue-hi); font-style: normal; }
-    .metric-l {
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.32);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .stat-v em { color:var(--blue-hi); font-style:normal; }
+    .stat-l {
+      font-size:0.68rem; font-weight:600;
+      color:rgba(255,255,255,0.32);
+      text-transform:uppercase; letter-spacing:0.1em;
     }
 
-    /* ── Right panel: glassmorphic card ── */
-    .hero-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    /* ── Right panel ── */
+    .hero-panel { display:flex; flex-direction:column; gap:14px; }
 
-    .glass {
-      background: rgba(255,255,255,0.055);
+    .glass-card {
+      background: rgba(255,255,255,0.058);
       border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      padding: 26px;
+      border-radius: 20px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 26px 28px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .glass:hover {
+    .glass-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 56px rgba(0,0,0,0.35);
+      box-shadow: 0 22px 60px rgba(0,0,0,.38);
     }
 
-    .glass-label {
-      font-size: 0.64rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.32);
-      margin-bottom: 14px;
+    .gc-lbl {
+      font-size:0.63rem; font-weight:700;
+      letter-spacing:0.18em; text-transform:uppercase;
+      color:rgba(255,255,255,0.3); margin-bottom:14px;
     }
-    .glass-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-    .glass-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#fff; }
-    .glass-sub   { font-size:0.74rem; color:rgba(255,255,255,0.38); margin-top:3px; }
+    .gc-row { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .gc-title { font-family:'DM Serif Display',serif; font-size:1.1rem; color:var(--white); }
+    .gc-sub   { font-size:0.73rem; color:rgba(255,255,255,0.36); margin-top:3px; }
     .badge {
-      font-size: 0.68rem; font-weight: 700;
-      padding: 5px 12px; border-radius: 100px;
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-size:0.68rem; font-weight:700;
+      padding:4px 12px; border-radius:100px;
+      white-space:nowrap; flex-shrink:0;
     }
-    .badge-green { background:rgba(34,197,94,0.14); color:#22c55e; border:1px solid rgba(34,197,94,0.25); }
-    .badge-blue  { background:rgba(74,127,255,0.14); color:var(--blue-hi); border:1px solid rgba(74,127,255,0.25); }
-    .badge-amber { background:rgba(218,168,78,0.14); color:var(--gold-hi); border:1px solid rgba(218,168,78,0.25); }
+    .b-green { background:rgba(34,197,94,0.13); color:#22c55e; border:1px solid rgba(34,197,94,0.26); }
+    .b-blue  { background:rgba(74,130,255,0.13); color:var(--blue-hi); border:1px solid rgba(74,130,255,0.26); }
+    .b-amber { background:rgba(220,170,80,0.13); color:var(--gold-hi); border:1px solid rgba(220,170,80,0.26); }
 
-    .hr-glass { border:none; border-top:1px solid rgba(255,255,255,0.07); margin:14px 0; }
+    .gc-hr { border:none; border-top:1px solid rgba(255,255,255,0.07); margin:14px 0; }
 
-    .data-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; }
-    .data-k   { font-size:0.76rem; color:rgba(255,255,255,0.36); }
-    .data-v   { font-size:0.8rem;  font-weight:600; color:rgba(255,255,255,0.8); }
-    .data-v-g { color:#22c55e; }
+    .gc-data { display:flex; justify-content:space-between; align-items:center; padding:5px 0; }
+    .gc-dk   { font-size:0.75rem; color:rgba(255,255,255,0.35); }
+    .gc-dv   { font-size:0.8rem;  font-weight:600; color:rgba(255,255,255,0.8); }
+    .gc-dv-g { color:#22c55e; }
 
-    .prog-meta   { display:flex; justify-content:space-between; margin: 16px 0 8px; }
-    .prog-meta span { font-size:0.67rem; color:rgba(255,255,255,0.3); }
-    .prog-track  { height:5px; background:rgba(255,255,255,0.07); border-radius:4px; overflow:hidden; }
-    .prog-fill   { height:100%; background:linear-gradient(90deg, var(--blue), var(--blue-hi)); border-radius:4px; animation: pFill 2s 1.2s ease both; }
-    @keyframes pFill { from{width:0} to{width:74%} }
+    /* Progress */
+    .prog-hd { display:flex; justify-content:space-between; margin:18px 0 8px; }
+    .prog-hd span { font-size:0.67rem; color:rgba(255,255,255,0.3); }
+    .prog-track { height:5px; background:rgba(255,255,255,0.07); border-radius:3px; overflow:hidden; }
+    .prog-fill  {
+      height:100%;
+      background:linear-gradient(90deg, var(--blue), var(--blue-hi));
+      border-radius:3px;
+      animation: barGrow 2.2s 1.4s ease both;
+    }
+    @keyframes barGrow { from{width:0} to{width:78%} }
 
-    .chips { display:flex; gap:7px; flex-wrap:wrap; }
-    .chip  {
+    .chip-row { display:flex; gap:7px; flex-wrap:wrap; }
+    .chip     {
       font-size:0.67rem; font-weight:600;
       padding:4px 11px; border-radius:100px;
       background:rgba(255,255,255,0.06);
@@ -466,858 +413,803 @@
       color:rgba(255,255,255,0.48);
     }
 
-    .live-dot { width:6px; height:6px; background:var(--blue-hi); border-radius:50%; animation:liveBlink 1.5s infinite; }
-    @keyframes liveBlink {
-      0%,100%{box-shadow:0 0 0 0 rgba(74,127,255,.7)}
-      50%{box-shadow:0 0 0 5px rgba(74,127,255,0)}
+    .live-row { display:flex; align-items:center; gap:9px; }
+    .live-dot {
+      width:7px; height:7px;
+      background:var(--blue-hi); border-radius:50%;
+      animation:livePop 1.5s infinite;
     }
-    .live-text { font-size:0.7rem; font-weight:700; color:var(--blue-hi); letter-spacing:0.06em; }
+    @keyframes livePop{
+      0%,100%{box-shadow:0 0 0 0 rgba(74,130,255,.7)}
+      50%{box-shadow:0 0 0 5px rgba(74,130,255,0)}
+    }
+    .live-txt { font-size:0.7rem; font-weight:700; color:var(--blue-hi); letter-spacing:0.05em; }
 
-    /* ═══════════════════════════════════════════
-       FEATURE CARDS
-    ═══════════════════════════════════════════ */
+    /* ═══════════════════════════════════════════════════
+       FEATURES SECTION
+    ═══════════════════════════════════════════════════ */
     .features {
-      background: var(--paper);
-      padding: 116px 6%;
+      background: var(--surface);
+      padding: 118px 6%;
       position: relative;
     }
     .features::before {
       content:'';
-      position:absolute;
-      top:0; left:0; right:0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--blue) 0%, var(--blue-hi) 50%, var(--gold) 100%);
+      position:absolute; top:0; left:0; right:0;
+      height:4px;
+      background:linear-gradient(90deg,var(--blue) 0%,var(--blue-hi) 48%,var(--gold) 100%);
     }
 
-    .feat-inner { max-width: 1200px; margin: 0 auto; }
+    .feat-inner { max-width:1220px; margin:0 auto; }
 
-    /* Section header */
-    .sec-hdr { margin-bottom: 68px; }
+    /* Header */
+    .sec-head { margin-bottom:66px; }
     .sec-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--blue);
-      background: rgba(23,88,224,0.07);
-      border: 1px solid rgba(23,88,224,0.2);
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 18px;
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:0.68rem; font-weight:700;
+      letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--blue);
+      background:rgba(20,96,232,0.07);
+      border:1px solid rgba(20,96,232,0.2);
+      padding:6px 16px; border-radius:100px;
+      margin-bottom:18px;
     }
     .sec-h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3.1rem);
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1.13;
-      letter-spacing: -0.015em;
-      margin-bottom: 16px;
+      font-family:'DM Serif Display',serif;
+      font-size:clamp(2rem,3.5vw,3.1rem);
+      font-weight:400; line-height:1.13;
+      color:var(--ink); letter-spacing:-0.01em;
+      margin-bottom:16px;
     }
     .sec-h2 em { font-style:italic; color:var(--blue); }
-    .sec-lead {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.78;
-      max-width: 520px;
+    .sec-p {
+      font-size:1rem; color:var(--muted);
+      line-height:1.78; max-width:530px;
     }
 
     /* Cards grid */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 28px;
-    }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
 
-    .feat-card {
-      background: var(--card-bg);
-      border-radius: var(--r-lg);
-      border: 1px solid var(--border);
-      padding: 44px 36px 40px;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(44px);
+    .fc {
+      background:var(--card);
+      border-radius:var(--rad-lg);
+      border:1px solid var(--border-lt);
+      padding:44px 36px 40px;
+      position:relative; overflow:hidden;
+      opacity:0; transform:translateY(44px);
       transition:
-        transform 0.42s cubic-bezier(.18,.65,.32,1),
+        transform 0.42s cubic-bezier(.18,.66,.32,1),
         box-shadow 0.42s,
         border-color 0.3s;
     }
-    .feat-card.appeared {
-      animation: cardAppear 0.68s ease forwards;
-    }
-    .feat-card.appeared:nth-child(2) { animation-delay:0.12s; }
-    .feat-card.appeared:nth-child(3) { animation-delay:0.24s; }
-    @keyframes cardAppear { to { opacity:1; transform:translateY(0); } }
+    .fc.show { animation:fcIn 0.68s ease forwards; }
+    .fc.show:nth-child(2) { animation-delay:0.13s; }
+    .fc.show:nth-child(3) { animation-delay:0.26s; }
+    @keyframes fcIn{ to{ opacity:1; transform:translateY(0); } }
 
-    .feat-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 32px 72px rgba(6,17,31,0.13);
-      border-color: rgba(23,88,224,0.22);
+    .fc:hover {
+      transform:translateY(-11px);
+      box-shadow:0 34px 74px rgba(5,16,30,0.13);
+      border-color:rgba(20,96,232,0.22);
     }
 
-    /* Animated top-bar on hover */
-    .top-bar {
-      position: absolute;
-      top:0; left:0; right:0;
-      height: 3px;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s cubic-bezier(.18,.65,.32,1);
-      border-radius: var(--r-lg) var(--r-lg) 0 0;
+    /* Accent bar */
+    .fc-bar {
+      position:absolute; top:0; left:0; right:0; height:3px;
+      transform:scaleX(0); transform-origin:left;
+      transition:transform 0.5s cubic-bezier(.18,.66,.32,1);
+      border-radius:var(--rad-lg) var(--rad-lg) 0 0;
     }
-    .feat-card:hover .top-bar { transform: scaleX(1); }
-    .tb-blue { background:linear-gradient(90deg, #1758e0, #4a7fff); }
-    .tb-gold { background:linear-gradient(90deg, #b07d1a, #daa84e); }
-    .tb-teal { background:linear-gradient(90deg, #0891b2, #38bdf8); }
+    .fc:hover .fc-bar { transform:scaleX(1); }
+    .bar-b { background:linear-gradient(90deg,#1460e8,#4a82ff); }
+    .bar-g { background:linear-gradient(90deg,#b27820,#dcaa50); }
+    .bar-t { background:linear-gradient(90deg,#0694b4,#38bdf8); }
 
-    /* Ghost number */
-    .ghost-num {
-      position: absolute;
-      bottom: 10px; right: 18px;
-      font-size: 7rem;
-      font-weight: 900;
-      line-height: 1;
-      color: rgba(6,17,31,0.032);
-      pointer-events: none;
-      user-select: none;
-    }
+    /* Ghost watermark */
+    .wm { position:absolute; bottom:8px; right:18px; font-size:7rem; font-weight:900; line-height:1; color:rgba(5,16,30,0.032); pointer-events:none; user-select:none; }
 
-    /* Icon box */
-    .icon-box {
-      width: 62px; height: 62px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 28px;
-      transition: transform 0.35s cubic-bezier(.18,.65,.32,1);
+    /* Icon */
+    .ic-box {
+      width:62px; height:62px; border-radius:16px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:28px;
+      transition:transform 0.35s cubic-bezier(.18,.66,.32,1);
     }
-    .feat-card:hover .icon-box { transform: scale(1.1) rotate(-4deg); }
-    .icon-box svg {
-      width: 28px; height: 28px;
-      fill: none;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .ib-blue { background:rgba(23,88,224,0.09); }
-    .ib-blue svg { stroke:var(--blue); }
-    .ib-gold { background:rgba(176,125,26,0.1); }
-    .ib-gold svg { stroke:var(--gold); }
-    .ib-teal { background:rgba(8,145,178,0.1); }
-    .ib-teal svg { stroke:var(--teal); }
+    .fc:hover .ic-box { transform:scale(1.1) rotate(-4deg); }
+    .ic-box svg { width:28px; height:28px; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .ic-b { background:rgba(20,96,232,0.09); } .ic-b svg { stroke:var(--blue); }
+    .ic-g { background:rgba(178,120,32,0.1);  } .ic-g svg { stroke:var(--gold); }
+    .ic-t { background:rgba(6,148,180,0.1);   } .ic-t svg { stroke:var(--teal); }
 
-    .card-h {
-      font-size: 1.22rem;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-      margin-bottom: 13px;
-    }
-    .card-p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.82;
-      margin-bottom: 24px;
-    }
+    .fc-h { font-size:1.22rem; font-weight:800; color:var(--ink); letter-spacing:-0.02em; margin-bottom:13px; }
+    .fc-p { font-size:0.9rem; color:var(--muted); line-height:1.82; margin-bottom:24px; }
 
-    /* Tag pills */
-    .pill-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
-    .pill {
-      font-size:0.67rem; font-weight:700;
-      letter-spacing:0.05em;
-      padding:4px 12px;
-      border-radius:100px;
-    }
-    .p-blue { background:rgba(23,88,224,0.08); color:var(--blue); }
-    .p-gold { background:rgba(176,125,26,0.1); color:var(--gold); }
-    .p-teal { background:rgba(8,145,178,0.1); color:var(--teal); }
+    /* Pills */
+    .pills { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:26px; }
+    .pill  { font-size:0.67rem; font-weight:700; letter-spacing:0.05em; padding:4px 12px; border-radius:100px; }
+    .pi-b  { background:rgba(20,96,232,0.08); color:var(--blue); }
+    .pi-g  { background:rgba(178,120,32,0.1); color:var(--gold); }
+    .pi-t  { background:rgba(6,148,180,0.1);  color:var(--teal); }
 
-    /* Learn more link */
-    .learn-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: gap 0.22s;
-    }
-    .learn-link svg {
-      width:14px; height:14px;
-      fill:none; stroke-width:2.5;
-      stroke-linecap:round; stroke-linejoin:round;
-      transition: transform 0.22s;
-    }
-    .learn-link:hover { gap: 12px; }
-    .learn-link:hover svg { transform: translateX(3px); }
-    .ll-blue { color:var(--blue); } .ll-blue svg { stroke:var(--blue); }
-    .ll-gold { color:var(--gold); } .ll-gold svg { stroke:var(--gold); }
-    .ll-teal { color:var(--teal); } .ll-teal svg { stroke:var(--teal); }
+    /* Link */
+    .fc-link { display:inline-flex; align-items:center; gap:7px; font-size:0.875rem; font-weight:700; text-decoration:none; transition:gap 0.22s; }
+    .fc-link svg { width:14px; height:14px; fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; transition:transform 0.22s; }
+    .fc-link:hover { gap:12px; }
+    .fc-link:hover svg { transform:translateX(3px); }
+    .lk-b { color:var(--blue); } .lk-b svg { stroke:var(--blue); }
+    .lk-g { color:var(--gold); } .lk-g svg { stroke:var(--gold); }
+    .lk-t { color:var(--teal); } .lk-t svg { stroke:var(--teal); }
 
-    /* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════════════
        FOOTER
-    ═══════════════════════════════════════════ */
-    footer { background:var(--navy); }
-    .footer-inner {
-      max-width:1200px; margin:0 auto;
-      padding:52px 6% 36px;
+    ═══════════════════════════════════════════════════ */
+    footer { background:var(--ink); }
+    .ft-inner { max-width:1220px; margin:0 auto; padding:52px 6% 36px; }
+    .ft-top {
+      display:flex; align-items:center; justify-content:space-between;
+      padding-bottom:34px; border-bottom:1px solid var(--divide);
+      flex-wrap:wrap; gap:26px;
     }
-    .footer-top {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:28px;
-      padding-bottom:36px;
-      border-bottom:1px solid var(--divider);
-      flex-wrap:wrap;
-    }
-    .foot-links { display:flex; gap:30px; flex-wrap:wrap; }
-    .foot-links a {
-      font-size:0.83rem; font-weight:500;
-      color:rgba(255,255,255,0.38);
-      text-decoration:none;
-      transition:color 0.2s;
-    }
-    .foot-links a:hover { color:rgba(255,255,255,0.75); }
-    .footer-bottom {
+    .ft-nav { display:flex; gap:30px; flex-wrap:wrap; }
+    .ft-nav a { font-size:0.83rem; font-weight:500; color:rgba(255,255,255,0.36); text-decoration:none; transition:color 0.2s; }
+    .ft-nav a:hover { color:rgba(255,255,255,0.74); }
+    .ft-bot {
       padding-top:28px;
       display:flex; align-items:center; justify-content:space-between;
       flex-wrap:wrap; gap:12px;
     }
-    .foot-copy { font-size:0.77rem; color:rgba(255,255,255,0.22); }
-    .foot-legal { display:flex; gap:22px; }
-    .foot-legal a {
-      font-size:0.77rem; color:rgba(255,255,255,0.22);
-      text-decoration:none; transition:color 0.2s;
-    }
-    .foot-legal a:hover { color:rgba(255,255,255,0.5); }
+    .ft-copy { font-size:0.77rem; color:rgba(255,255,255,0.22); }
+    .ft-legal { display:flex; gap:22px; }
+    .ft-legal a { font-size:0.77rem; color:rgba(255,255,255,0.22); text-decoration:none; transition:color 0.2s; }
+    .ft-legal a:hover { color:rgba(255,255,255,0.5); }
 
-    /* ═══════════════════════════════════════════
+    /* ═══════════════════════════════════════════════════
        RESPONSIVE
-    ═══════════════════════════════════════════ */
+    ═══════════════════════════════════════════════════ */
     @media(max-width:1100px){
-      .hero-body { grid-template-columns:1fr; }
+      .hero-wrap { grid-template-columns:1fr; }
       .hero-right { display:none; }
     }
     @media(max-width:860px){
-      .cards-grid { grid-template-columns:1fr; max-width:460px; }
-      .nav-menu { display:none; }
-      .hamburger { display:flex; }
+      .cards { grid-template-columns:1fr; max-width:460px; }
+      .nav-list { display:none; }
+      .burger { display:flex; }
     }
     @media(max-width:560px){
-      .hero-metrics { flex-direction:column; gap:22px; }
-      .metric { border-right:none!important; padding:0!important; }
-      .hero-actions { flex-direction:column; }
-      .btn-cta { justify-content:center; }
+      .hero-stats { flex-direction:column; gap:22px; padding-top:28px; }
+      .stat { border-right:none!important; padding:0!important; }
+      .hero-ctas { flex-direction:column; }
+      .btn { justify-content:center; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════
      NAVBAR
-═══════════════════════════════════════════════ -->
-<nav class="nav" id="mainNav">
+═══════════════════════════════════════ -->
+<nav class="nav" id="nav">
 
-  <a href="#" class="logo-link" aria-label="Crest MGA">
-    <!-- Inline SVG logo mark: wave-crest shield with C -->
-    <svg class="logo-mark" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <a href="#" class="brand" aria-label="Veritas MGA">
+    <!-- Inline SVG brand mark: scales of justice within a shield -->
+    <svg class="brand-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <linearGradient id="shLg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#2e7bff"/>
-          <stop offset="100%" stop-color="#0e3fb5"/>
+        <linearGradient id="bLg1" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#2e7fff"/>
+          <stop offset="100%" stop-color="#0c3dbf"/>
         </linearGradient>
-        <linearGradient id="innerLg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="rgba(255,255,255,0.22)"/>
+        <linearGradient id="bLg2" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="rgba(255,255,255,0.2)"/>
           <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
         </linearGradient>
       </defs>
-      <!-- Shield body -->
-      <path d="M22 2.5L3.5 9.8V22c0 10.5 8 19.4 18.5 21.2C32.5 41.4 40.5 32.5 40.5 22V9.8L22 2.5z"
-            fill="url(#shLg)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
-      <!-- Highlight overlay -->
-      <path d="M22 6L7 12.5V22c0 8.8 6.5 17 15 19C30.5 39 37 30.8 37 22V12.5L22 6z"
-            fill="url(#innerLg)"/>
-      <!-- Wave crest path -->
-      <path d="M12 24 Q16 19 22 24 Q28 29 34 24"
-            stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-      <path d="M12 28.5 Q16 23.5 22 28.5 Q28 33.5 34 28.5"
-            stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-      <!-- Top accent bar -->
-      <rect x="14" y="12" width="16" height="1.5" rx="0.75" fill="rgba(218,168,78,0.85)"/>
+      <!-- Shield -->
+      <path d="M23 2L4 9.5V22c0 10.8 8.2 20 19 21.8C33.8 42 42 32.8 42 22V9.5L23 2z"
+            fill="url(#bLg1)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+      <path d="M23 5.5L7 12V22c0 9 6.8 16.8 16 18.5C32.2 38.8 39 31 39 22V12L23 5.5z"
+            fill="url(#bLg2)"/>
+      <!-- Scales beam -->
+      <line x1="14" y1="19" x2="32" y2="19" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="23" y1="13" x2="23" y2="33" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+      <!-- Left pan -->
+      <path d="M14 19 l-4 6 h8 z" stroke="white" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+      <!-- Right pan -->
+      <path d="M32 19 l-4 6 h8 z" stroke="white" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+      <!-- Gold base bar -->
+      <rect x="20" y="31.5" width="6" height="2" rx="1" fill="rgba(220,170,80,0.9)"/>
     </svg>
 
-    <div class="logo-copy">
-      <span class="logo-name">Crest</span>
-      <span class="logo-descriptor">Managing General Agency</span>
+    <div class="brand-text">
+      <span class="brand-name">Veritas</span>
+      <span class="brand-sub">Managing General Agency</span>
     </div>
   </a>
 
-  <ul class="nav-menu" id="navMenu">
+  <ul class="nav-list" id="navList">
     <li><a href="#">Solutions</a></li>
     <li><a href="#">Markets</a></li>
     <li><a href="#">Brokers</a></li>
     <li><a href="#">Insights</a></li>
     <li><a href="#">About</a></li>
-    <li><a href="#" class="nav-btn">Get a Quote</a></li>
+    <li><a href="#" class="nav-cta">Get a Quote</a></li>
   </ul>
 
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+  <button class="burger" id="burger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- ═══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════
      HERO
-═══════════════════════════════════════════════ -->
+═══════════════════════════════════════ -->
 <section class="hero">
 
-  <!-- Background canvas with full SVG scene -->
-  <div class="hero-canvas" aria-hidden="true">
-    <div class="canvas-base"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="bg-sky"></div>
 
-    <!-- Full cityscape SVG background image -->
-    <svg class="canvas-scene"
+    <!-- ══ FULL SVG CITYSCAPE BACKGROUND IMAGE ══ -->
+    <svg class="bg-svg"
          viewBox="0 0 1440 900"
          preserveAspectRatio="xMidYMax slice"
          xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Building fills -->
-        <linearGradient id="bA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1c3a6a"/><stop offset="100%" stop-color="#0d2040"/></linearGradient>
-        <linearGradient id="bB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#162d56"/><stop offset="100%" stop-color="#0b1e3a"/></linearGradient>
-        <linearGradient id="bC" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#122444"/><stop offset="100%" stop-color="#081828"/></linearGradient>
-        <linearGradient id="bD" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f2040"/><stop offset="100%" stop-color="#07121e"/></linearGradient>
-        <linearGradient id="waterG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0b1e38" stop-opacity="0.95"/><stop offset="100%" stop-color="#050d1a"/></linearGradient>
-        <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#020a18"/>
-          <stop offset="50%" stop-color="#071628"/>
-          <stop offset="100%" stop-color="#0c2040"/>
+        <!-- Building gradients -->
+        <linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3d70"/><stop offset="100%" stop-color="#0d2040"/></linearGradient>
+        <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#162e58"/><stop offset="100%" stop-color="#0b1e38"/></linearGradient>
+        <linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#112244"/><stop offset="100%" stop-color="#08162a"/></linearGradient>
+        <linearGradient id="gD" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e2040"/><stop offset="100%" stop-color="#07121e"/></linearGradient>
+        <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#020a18"/>
+          <stop offset="45%"  stop-color="#071525"/>
+          <stop offset="100%" stop-color="#0c2244"/>
         </linearGradient>
-        <!-- Window glow filter -->
-        <filter id="wGlow"><feGaussianBlur stdDeviation="1.5" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
-        <!-- Bloom filter -->
-        <filter id="bloom" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
-        <filter id="softBloom" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
-        <radialGradient id="cityBloom" cx="50%" cy="100%" r="60%">
-          <stop offset="0%" stop-color="rgba(23,88,224,0.35)"/>
+        <linearGradient id="gWater" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#0b1c36" stop-opacity="0.96"/>
+          <stop offset="100%" stop-color="#040c1a"/>
+        </linearGradient>
+        <!-- Filters -->
+        <filter id="fWin"><feGaussianBlur stdDeviation="1.2" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+        <filter id="fBloom" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+        <!-- Radial city glow -->
+        <radialGradient id="rCity" cx="50%" cy="100%" r="60%">
+          <stop offset="0%"   stop-color="rgba(20,96,232,0.3)"/>
           <stop offset="100%" stop-color="transparent"/>
         </radialGradient>
-        <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(200,220,255,0.9)"/>
-          <stop offset="60%" stop-color="rgba(180,205,255,0.4)"/>
+        <radialGradient id="rMoon" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="rgba(210,228,255,0.95)"/>
+          <stop offset="55%"  stop-color="rgba(190,215,255,0.35)"/>
           <stop offset="100%" stop-color="transparent"/>
         </radialGradient>
       </defs>
 
-      <!-- Sky base -->
-      <rect width="1440" height="900" fill="url(#skyG)"/>
+      <!-- ── SKY ── -->
+      <rect width="1440" height="900" fill="url(#gSky)"/>
 
       <!-- Stars -->
-      <g fill="white" opacity="0.75">
-        <circle cx="60"   cy="45"  r="0.9"/><circle cx="180"  cy="22"  r="0.7"/>
-        <circle cx="310"  cy="68"  r="1.1"/><circle cx="445"  cy="18"  r="0.8"/>
-        <circle cx="595"  cy="72"  r="0.9"/><circle cx="730"  cy="30"  r="1.3"/>
-        <circle cx="870"  cy="55"  r="0.7"/><circle cx="1000" cy="16"  r="1.0"/>
-        <circle cx="1135" cy="66"  r="0.8"/><circle cx="1290" cy="32"  r="1.1"/>
-        <circle cx="1400" cy="78"  r="0.7"/><circle cx="135"  cy="138" r="0.7"/>
-        <circle cx="375"  cy="118" r="0.9"/><circle cx="615"  cy="152" r="0.7"/>
-        <circle cx="845"  cy="108" r="0.8"/><circle cx="1055" cy="142" r="0.7"/>
-        <circle cx="1325" cy="122" r="1.0"/><circle cx="52"   cy="218" r="0.8"/>
-        <circle cx="258"  cy="198" r="0.7"/><circle cx="478"  cy="238" r="0.9"/>
-        <circle cx="698"  cy="182" r="0.7"/><circle cx="918"  cy="228" r="0.8"/>
-        <circle cx="1148" cy="188" r="0.7"/><circle cx="1410" cy="212" r="0.9"/>
-        <circle cx="88"   cy="290" r="0.6"/><circle cx="290"  cy="272" r="0.7"/>
-        <circle cx="508"  cy="308" r="0.6"/><circle cx="760"  cy="255" r="0.8"/>
-        <circle cx="985"  cy="298" r="0.6"/><circle cx="1210" cy="262" r="0.7"/>
+      <g fill="white">
+        <circle cx="55"   cy="42"  r="0.85" opacity="0.85"/>
+        <circle cx="170"  cy="20"  r="0.7"  opacity="0.75"/>
+        <circle cx="298"  cy="64"  r="1.05" opacity="0.8"/>
+        <circle cx="440"  cy="17"  r="0.8"  opacity="0.85"/>
+        <circle cx="588"  cy="70"  r="0.9"  opacity="0.72"/>
+        <circle cx="718"  cy="28"  r="1.25" opacity="0.9"/>
+        <circle cx="860"  cy="52"  r="0.7"  opacity="0.75"/>
+        <circle cx="994"  cy="14"  r="1.0"  opacity="0.82"/>
+        <circle cx="1128" cy="65"  r="0.8"  opacity="0.7"/>
+        <circle cx="1285" cy="30"  r="1.1"  opacity="0.85"/>
+        <circle cx="1398" cy="76"  r="0.72" opacity="0.9"/>
+        <circle cx="128"  cy="135" r="0.75" opacity="0.62"/>
+        <circle cx="368"  cy="115" r="0.9"  opacity="0.66"/>
+        <circle cx="610"  cy="150" r="0.7"  opacity="0.58"/>
+        <circle cx="840"  cy="106" r="0.85" opacity="0.7"/>
+        <circle cx="1048" cy="140" r="0.75" opacity="0.62"/>
+        <circle cx="1318" cy="118" r="1.05" opacity="0.67"/>
+        <circle cx="48"   cy="215" r="0.82" opacity="0.52"/>
+        <circle cx="252"  cy="195" r="0.7"  opacity="0.58"/>
+        <circle cx="474"  cy="235" r="0.95" opacity="0.52"/>
+        <circle cx="694"  cy="180" r="0.8"  opacity="0.62"/>
+        <circle cx="912"  cy="225" r="0.85" opacity="0.54"/>
+        <circle cx="1142" cy="185" r="0.7"  opacity="0.52"/>
+        <circle cx="1405" cy="210" r="0.95" opacity="0.57"/>
+        <circle cx="82"   cy="285" r="0.65" opacity="0.48"/>
+        <circle cx="285"  cy="268" r="0.72" opacity="0.52"/>
+        <circle cx="506"  cy="304" r="0.62" opacity="0.46"/>
+        <circle cx="756"  cy="252" r="0.78" opacity="0.6"/>
+        <circle cx="980"  cy="295" r="0.64" opacity="0.48"/>
+        <circle cx="1205" cy="260" r="0.7"  opacity="0.52"/>
+        <circle cx="1378" cy="310" r="0.6"  opacity="0.45"/>
       </g>
 
-      <!-- Moon with halo -->
-      <circle cx="1260" cy="90" r="50" fill="rgba(180,210,255,0.06)"/>
-      <circle cx="1260" cy="90" r="34" fill="rgba(190,215,255,0.12)"/>
-      <circle cx="1260" cy="90" r="22" fill="rgba(210,228,255,0.22)"/>
-      <circle cx="1260" cy="90" r="14" fill="rgba(230,240,255,0.55)"/>
-      <!-- Moon crescent shadow -->
-      <circle cx="1265" cy="87" r="11" fill="rgba(5,12,28,0.5)"/>
+      <!-- Moon -->
+      <circle cx="1250" cy="88" r="55" fill="rgba(180,210,255,0.05)"/>
+      <circle cx="1250" cy="88" r="38" fill="rgba(195,218,255,0.12)"/>
+      <circle cx="1250" cy="88" r="25" fill="rgba(215,232,255,0.22)"/>
+      <circle cx="1250" cy="88" r="16" fill="rgba(235,245,255,0.55)"/>
+      <circle cx="1254" cy="85" r="12" fill="rgba(4,12,26,0.48)"/>
 
-      <!-- Distant horizon glow -->
-      <ellipse cx="720" cy="520" rx="600" ry="100" fill="url(#cityBloom)"/>
+      <!-- Atmosphere / horizon glow -->
+      <ellipse cx="720" cy="530" rx="640" ry="110" fill="url(#rCity)"/>
 
-      <!-- ── Far background silhouette ── -->
-      <g opacity="0.55" fill="#071422">
-        <rect x="0"    y="530" width="55"  height="370"/>
-        <rect x="20"   y="505" width="35"  height="395"/>
-        <rect x="60"   y="520" width="45"  height="380"/>
-        <rect x="110"  y="495" width="38"  height="405"/>
-        <rect x="155"  y="510" width="50"  height="390"/>
-        <rect x="210"  y="485" width="40"  height="415"/>
-        <rect x="255"  y="525" width="35"  height="375"/>
-        <!-- right side -->
-        <rect x="1130" y="515" width="50"  height="385"/>
-        <rect x="1185" y="492" width="58"  height="408"/>
-        <rect x="1248" y="508" width="42"  height="392"/>
-        <rect x="1295" y="480" width="65"  height="420"/>
-        <rect x="1365" y="518" width="45"  height="382"/>
-        <rect x="1410" y="498" width="30"  height="402"/>
+      <!-- ── DISTANT SILHOUETTE ── -->
+      <g fill="#05101c" opacity="0.6">
+        <rect x="0"    y="540" width="50"  height="360"/>
+        <rect x="18"   y="515" width="32"  height="385"/>
+        <rect x="55"   y="528" width="44"  height="372"/>
+        <rect x="104"  y="500" width="36"  height="400"/>
+        <rect x="146"  y="516" width="48"  height="384"/>
+        <rect x="200"  y="490" width="38"  height="410"/>
+        <rect x="244"  y="530" width="32"  height="370"/>
+        <!-- right -->
+        <rect x="1148" y="522" width="48"  height="378"/>
+        <rect x="1202" y="496" width="55"  height="404"/>
+        <rect x="1262" y="512" width="40"  height="388"/>
+        <rect x="1308" y="485" width="62"  height="415"/>
+        <rect x="1375" y="520" width="44"  height="380"/>
+        <rect x="1420" y="500" width="20"  height="400"/>
       </g>
 
-      <!-- ══════ MAIN BUILDINGS ══════ -->
+      <!-- ═══ MAIN BUILDINGS ═══ -->
 
-      <!-- TOWER 1 — Dominant centre-left skyscraper with spire -->
+      <!-- TOWER 1 — Flagship centre-left with stepped crown & spire -->
       <g>
-        <rect x="430" y="240" width="120" height="490" fill="url(#bA)"/>
-        <!-- Setbacks / crown -->
-        <rect x="445" y="240" width="90"  height="18" fill="rgba(255,255,255,0.035)"/>
-        <rect x="455" y="190" width="70"  height="58" fill="#162d56"/>
-        <rect x="462" y="160" width="56"  height="38" fill="#1c3565"/>
+        <rect x="420" y="235" width="125" height="495" fill="url(#gA)"/>
+        <!-- Crown setbacks -->
+        <rect x="433" y="235" width="99" height="20" fill="rgba(255,255,255,0.04)"/>
+        <rect x="443" y="185" width="79" height="58" fill="#182e5a"/>
+        <rect x="452" y="158" width="61" height="34" fill="#1c3668"/>
         <!-- Spire -->
-        <polygon points="490,110 479,163 501,163" fill="#162748"/>
-        <line x1="490" y1="110" x2="490" y2="104" stroke="rgba(218,168,78,0.9)" stroke-width="2"/>
-        <!-- Windows T1 — warm amber -->
-        <g fill="rgba(255,210,100,0.52)" filter="url(#wGlow)">
-          <rect x="448" y="248" width="9" height="13" rx="1.5"/>
-          <rect x="463" y="248" width="9" height="13" rx="1.5"/>
-          <rect x="478" y="248" width="9" height="13" rx="1.5"/>
-          <rect x="493" y="248" width="9" height="13" rx="1.5"/>
-          <rect x="508" y="248" width="9" height="13" rx="1.5"/>
-          <rect x="523" y="248" width="9" height="13" rx="1.5"/>
+        <polygon points="482,105 470,162 494,162" fill="#162a50"/>
+        <line x1="482" y1="105" x2="482" y2="100" stroke="rgba(220,170,80,0.95)" stroke-width="2"/>
+        <!-- Spire red dot -->
+        <circle cx="482" cy="99" r="3" fill="rgba(255,60,60,0.7)"/>
 
-          <rect x="448" y="270" width="9" height="13" rx="1.5" opacity="0.55"/>
-          <rect x="463" y="270" width="9" height="13" rx="1.5"/>
-          <rect x="478" y="270" width="9" height="13" rx="1.5" opacity="0.7"/>
-          <rect x="493" y="270" width="9" height="13" rx="1.5" opacity="0.45"/>
-          <rect x="508" y="270" width="9" height="13" rx="1.5"/>
-          <rect x="523" y="270" width="9" height="13" rx="1.5" opacity="0.6"/>
-
-          <rect x="448" y="292" width="9" height="13" rx="1.5"/>
-          <rect x="463" y="292" width="9" height="13" rx="1.5" opacity="0.5"/>
-          <rect x="478" y="292" width="9" height="13" rx="1.5"/>
-          <rect x="493" y="292" width="9" height="13" rx="1.5" opacity="0.75"/>
-          <rect x="523" y="292" width="9" height="13" rx="1.5" opacity="0.55"/>
-
-          <rect x="448" y="314" width="9" height="13" rx="1.5" opacity="0.6"/>
-          <rect x="463" y="314" width="9" height="13" rx="1.5"/>
-          <rect x="478" y="314" width="9" height="13" rx="1.5" opacity="0.5"/>
-          <rect x="508" y="314" width="9" height="13" rx="1.5"/>
-          <rect x="523" y="314" width="9" height="13" rx="1.5" opacity="0.7"/>
-
-          <rect x="448" y="336" width="9" height="13" rx="1.5"/>
-          <rect x="463" y="336" width="9" height="13" rx="1.5" opacity="0.45"/>
-          <rect x="493" y="336" width="9" height="13" rx="1.5"/>
-          <rect x="508" y="336" width="9" height="13" rx="1.5" opacity="0.6"/>
-
-          <rect x="448" y="358" width="9" height="13" rx="1.5" opacity="0.5"/>
-          <rect x="478" y="358" width="9" height="13" rx="1.5"/>
-          <rect x="493" y="358" width="9" height="13" rx="1.5" opacity="0.65"/>
-          <rect x="523" y="358" width="9" height="13" rx="1.5"/>
-
-          <rect x="448" y="380" width="9" height="13" rx="1.5"/>
-          <rect x="463" y="380" width="9" height="13" rx="1.5" opacity="0.6"/>
-          <rect x="508" y="380" width="9" height="13" rx="1.5" opacity="0.5"/>
-          <rect x="523" y="380" width="9" height="13" rx="1.5"/>
-
-          <rect x="448" y="402" width="9" height="13" rx="1.5" opacity="0.45"/>
-          <rect x="478" y="402" width="9" height="13" rx="1.5"/>
-          <rect x="493" y="402" width="9" height="13" rx="1.5" opacity="0.6"/>
-          <rect x="523" y="402" width="9" height="13" rx="1.5" opacity="0.5"/>
+        <!-- Windows — warm amber glow -->
+        <g fill="rgba(255,208,90,0.54)" filter="url(#fWin)">
+          <!-- Row 1 -->
+          <rect x="437" y="244" width="9" height="13" rx="1.5"/>
+          <rect x="452" y="244" width="9" height="13" rx="1.5"/>
+          <rect x="467" y="244" width="9" height="13" rx="1.5"/>
+          <rect x="482" y="244" width="9" height="13" rx="1.5"/>
+          <rect x="497" y="244" width="9" height="13" rx="1.5"/>
+          <rect x="512" y="244" width="9" height="13" rx="1.5"/>
+          <rect x="527" y="244" width="9" height="13" rx="1.5"/>
+          <!-- Row 2 -->
+          <rect x="437" y="266" width="9" height="13" rx="1.5" opacity="0.55"/>
+          <rect x="452" y="266" width="9" height="13" rx="1.5"/>
+          <rect x="467" y="266" width="9" height="13" rx="1.5" opacity="0.7"/>
+          <rect x="482" y="266" width="9" height="13" rx="1.5" opacity="0.45"/>
+          <rect x="497" y="266" width="9" height="13" rx="1.5"/>
+          <rect x="527" y="266" width="9" height="13" rx="1.5" opacity="0.62"/>
+          <!-- Row 3 -->
+          <rect x="437" y="288" width="9" height="13" rx="1.5"/>
+          <rect x="452" y="288" width="9" height="13" rx="1.5" opacity="0.5"/>
+          <rect x="482" y="288" width="9" height="13" rx="1.5"/>
+          <rect x="497" y="288" width="9" height="13" rx="1.5" opacity="0.72"/>
+          <rect x="512" y="288" width="9" height="13" rx="1.5" opacity="0.48"/>
+          <rect x="527" y="288" width="9" height="13" rx="1.5"/>
+          <!-- Row 4 -->
+          <rect x="437" y="310" width="9" height="13" rx="1.5" opacity="0.62"/>
+          <rect x="452" y="310" width="9" height="13" rx="1.5"/>
+          <rect x="467" y="310" width="9" height="13" rx="1.5" opacity="0.5"/>
+          <rect x="497" y="310" width="9" height="13" rx="1.5"/>
+          <rect x="512" y="310" width="9" height="13" rx="1.5" opacity="0.68"/>
+          <!-- Row 5 -->
+          <rect x="437" y="332" width="9" height="13" rx="1.5"/>
+          <rect x="452" y="332" width="9" height="13" rx="1.5" opacity="0.44"/>
+          <rect x="482" y="332" width="9" height="13" rx="1.5"/>
+          <rect x="497" y="332" width="9" height="13" rx="1.5" opacity="0.56"/>
+          <rect x="527" y="332" width="9" height="13" rx="1.5" opacity="0.7"/>
+          <!-- Row 6 -->
+          <rect x="437" y="354" width="9" height="13" rx="1.5" opacity="0.48"/>
+          <rect x="467" y="354" width="9" height="13" rx="1.5"/>
+          <rect x="482" y="354" width="9" height="13" rx="1.5" opacity="0.65"/>
+          <rect x="512" y="354" width="9" height="13" rx="1.5"/>
+          <!-- Row 7 -->
+          <rect x="437" y="376" width="9" height="13" rx="1.5"/>
+          <rect x="452" y="376" width="9" height="13" rx="1.5" opacity="0.6"/>
+          <rect x="497" y="376" width="9" height="13" rx="1.5" opacity="0.5"/>
+          <rect x="527" y="376" width="9" height="13" rx="1.5"/>
+          <!-- Row 8 -->
+          <rect x="437" y="398" width="9" height="13" rx="1.5" opacity="0.44"/>
+          <rect x="467" y="398" width="9" height="13" rx="1.5"/>
+          <rect x="482" y="398" width="9" height="13" rx="1.5" opacity="0.58"/>
+          <rect x="512" y="398" width="9" height="13" rx="1.5" opacity="0.48"/>
+          <!-- Row 9 -->
+          <rect x="437" y="420" width="9" height="13" rx="1.5"/>
+          <rect x="452" y="420" width="9" height="13" rx="1.5" opacity="0.55"/>
+          <rect x="497" y="420" width="9" height="13" rx="1.5"/>
+          <rect x="527" y="420" width="9" height="13" rx="1.5" opacity="0.42"/>
         </g>
-        <!-- Crown windows (blue-tinted) -->
-        <g fill="rgba(140,190,255,0.55)">
-          <rect x="463" y="168" width="7" height="10" rx="1"/>
-          <rect x="476" y="168" width="7" height="10" rx="1" opacity="0.7"/>
-          <rect x="489" y="168" width="7" height="10" rx="1"/>
-          <rect x="463" y="184" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="476" y="184" width="7" height="10" rx="1"/>
-          <rect x="489" y="184" width="7" height="10" rx="1" opacity="0.8"/>
-          <rect x="465" y="200" width="6" height="9" rx="1"/>
-          <rect x="477" y="200" width="6" height="9" rx="1" opacity="0.7"/>
-          <rect x="489" y="200" width="6" height="9" rx="1"/>
+        <!-- Crown windows — cool blue -->
+        <g fill="rgba(140,192,255,0.58)" filter="url(#fWin)">
+          <rect x="457" y="165" width="7" height="10" rx="1"/>
+          <rect x="470" y="165" width="7" height="10" rx="1" opacity="0.7"/>
+          <rect x="483" y="165" width="7" height="10" rx="1"/>
+          <rect x="496" y="165" width="7" height="10" rx="1" opacity="0.55"/>
+          <rect x="457" y="182" width="7" height="10" rx="1" opacity="0.65"/>
+          <rect x="470" y="182" width="7" height="10" rx="1"/>
+          <rect x="483" y="182" width="7" height="10" rx="1" opacity="0.8"/>
+          <rect x="496" y="182" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="459" y="198" width="6" height="9" rx="1"/>
+          <rect x="471" y="198" width="6" height="9" rx="1" opacity="0.7"/>
+          <rect x="483" y="198" width="6" height="9" rx="1"/>
         </g>
       </g>
 
-      <!-- TOWER 2 — Right glass skyscraper -->
+      <!-- TOWER 2 — Right elegant tower -->
       <g>
-        <rect x="840" y="290" width="108" height="440" fill="url(#bB)"/>
-        <rect x="852" y="260" width="84"  height="40"  fill="#1a3260"/>
-        <rect x="860" y="240" width="68"  height="28"  fill="#1e3870"/>
+        <rect x="845" y="285" width="112" height="445" fill="url(#gB)"/>
+        <rect x="857" y="255" width="88"  height="38"  fill="#1a3462"/>
+        <rect x="866" y="232" width="70"  height="30"  fill="#1e3c70"/>
         <!-- Antenna -->
-        <line x1="894" y1="240" x2="894" y2="218" stroke="#162d56" stroke-width="3"/>
-        <line x1="894" y1="218" x2="894" y2="210" stroke="rgba(218,168,78,0.8)" stroke-width="2"/>
-        <!-- Windows T2 — cool blue tint -->
-        <g fill="rgba(160,205,255,0.45)" filter="url(#wGlow)">
-          <rect x="856" y="268" width="8" height="11" rx="1.5"/>
-          <rect x="870" y="268" width="8" height="11" rx="1.5" opacity="0.6"/>
-          <rect x="884" y="268" width="8" height="11" rx="1.5"/>
-          <rect x="898" y="268" width="8" height="11" rx="1.5" opacity="0.5"/>
-          <rect x="912" y="268" width="8" height="11" rx="1.5"/>
+        <line x1="901" y1="232" x2="901" y2="208" stroke="#162d56" stroke-width="3"/>
+        <line x1="901" y1="208" x2="901" y2="200" stroke="rgba(220,170,80,0.85)" stroke-width="2"/>
+        <circle cx="901" cy="199" r="3" fill="rgba(255,60,60,0.65)"/>
+        <!-- Windows — cool blue -->
+        <g fill="rgba(155,202,255,0.45)" filter="url(#fWin)">
+          <rect x="862" y="263" width="8" height="11" rx="1.5"/>
+          <rect x="876" y="263" width="8" height="11" rx="1.5" opacity="0.62"/>
+          <rect x="890" y="263" width="8" height="11" rx="1.5"/>
+          <rect x="904" y="263" width="8" height="11" rx="1.5" opacity="0.5"/>
+          <rect x="918" y="263" width="8" height="11" rx="1.5"/>
 
-          <rect x="856" y="288" width="8" height="11" rx="1.5" opacity="0.7"/>
-          <rect x="870" y="288" width="8" height="11" rx="1.5"/>
-          <rect x="884" y="288" width="8" height="11" rx="1.5" opacity="0.5"/>
-          <rect x="912" y="288" width="8" height="11" rx="1.5" opacity="0.65"/>
+          <rect x="862" y="283" width="8" height="11" rx="1.5" opacity="0.68"/>
+          <rect x="876" y="283" width="8" height="11" rx="1.5"/>
+          <rect x="890" y="283" width="8" height="11" rx="1.5" opacity="0.5"/>
+          <rect x="918" y="283" width="8" height="11" rx="1.5" opacity="0.62"/>
 
-          <rect x="856" y="308" width="8" height="11" rx="1.5"/>
-          <rect x="870" y="308" width="8" height="11" rx="1.5" opacity="0.4"/>
-          <rect x="898" y="308" width="8" height="11" rx="1.5"/>
-          <rect x="912" y="308" width="8" height="11" rx="1.5" opacity="0.6"/>
+          <rect x="862" y="303" width="8" height="11" rx="1.5"/>
+          <rect x="876" y="303" width="8" height="11" rx="1.5" opacity="0.42"/>
+          <rect x="904" y="303" width="8" height="11" rx="1.5"/>
+          <rect x="918" y="303" width="8" height="11" rx="1.5" opacity="0.58"/>
 
-          <rect x="856" y="328" width="8" height="11" rx="1.5" opacity="0.5"/>
-          <rect x="884" y="328" width="8" height="11" rx="1.5"/>
-          <rect x="898" y="328" width="8" height="11" rx="1.5" opacity="0.7"/>
+          <rect x="862" y="323" width="8" height="11" rx="1.5" opacity="0.52"/>
+          <rect x="890" y="323" width="8" height="11" rx="1.5"/>
+          <rect x="904" y="323" width="8" height="11" rx="1.5" opacity="0.7"/>
 
-          <rect x="856" y="348" width="8" height="11" rx="1.5"/>
-          <rect x="870" y="348" width="8" height="11" rx="1.5" opacity="0.55"/>
-          <rect x="912" y="348" width="8" height="11" rx="1.5"/>
+          <rect x="862" y="343" width="8" height="11" rx="1.5"/>
+          <rect x="876" y="343" width="8" height="11" rx="1.5" opacity="0.56"/>
+          <rect x="918" y="343" width="8" height="11" rx="1.5"/>
 
-          <rect x="856" y="368" width="8" height="11" rx="1.5" opacity="0.4"/>
-          <rect x="884" y="368" width="8" height="11" rx="1.5"/>
-          <rect x="898" y="368" width="8" height="11" rx="1.5" opacity="0.6"/>
+          <rect x="862" y="363" width="8" height="11" rx="1.5" opacity="0.42"/>
+          <rect x="890" y="363" width="8" height="11" rx="1.5"/>
+          <rect x="904" y="363" width="8" height="11" rx="1.5" opacity="0.62"/>
 
-          <rect x="856" y="388" width="8" height="11" rx="1.5"/>
-          <rect x="870" y="388" width="8" height="11" rx="1.5" opacity="0.5"/>
-          <rect x="912" y="388" width="8" height="11" rx="1.5" opacity="0.45"/>
+          <rect x="862" y="383" width="8" height="11" rx="1.5"/>
+          <rect x="876" y="383" width="8" height="11" rx="1.5" opacity="0.5"/>
+          <rect x="918" y="383" width="8" height="11" rx="1.5" opacity="0.45"/>
+
+          <rect x="862" y="403" width="8" height="11" rx="1.5" opacity="0.6"/>
+          <rect x="890" y="403" width="8" height="11" rx="1.5"/>
+          <rect x="904" y="403" width="8" height="11" rx="1.5" opacity="0.5"/>
         </g>
       </g>
 
-      <!-- TOWER 3 — Wide HQ building centre -->
+      <!-- TOWER 3 — Wide HQ block -->
       <g>
-        <rect x="610" y="360" width="185" height="370" fill="url(#bC)"/>
-        <rect x="625" y="340" width="155" height="28" fill="#10203e"/>
-        <!-- Entrance overhang -->
-        <rect x="672" y="698" width="70"  height="32"  fill="#0a1830"/>
-        <rect x="685" y="718" width="44"  height="12"  fill="#08152a"/>
-        <!-- Windows T3 mixed warm/cool -->
-        <g fill="rgba(190,218,255,0.38)">
-          <rect x="622" y="348" width="9" height="12" rx="1.5"/>
-          <rect x="637" y="348" width="9" height="12" rx="1.5" opacity="0.6"/>
-          <rect x="652" y="348" width="9" height="12" rx="1.5"/>
-          <rect x="667" y="348" width="9" height="12" rx="1.5" opacity="0.5"/>
-          <rect x="682" y="348" width="9" height="12" rx="1.5"/>
-          <rect x="697" y="348" width="9" height="12" rx="1.5" opacity="0.7"/>
-          <rect x="712" y="348" width="9" height="12" rx="1.5"/>
-          <rect x="727" y="348" width="9" height="12" rx="1.5" opacity="0.55"/>
-          <rect x="742" y="348" width="9" height="12" rx="1.5"/>
-          <rect x="757" y="348" width="9" height="12" rx="1.5" opacity="0.45"/>
-          <rect x="772" y="348" width="9" height="12" rx="1.5"/>
+        <rect x="598" y="355" width="196" height="375" fill="url(#gC)"/>
+        <rect x="615" y="333" width="162" height="30"  fill="#102038"/>
+        <!-- Entrance -->
+        <rect x="668" y="702" width="72" height="28"  fill="#0a1830"/>
+        <!-- Windows mixed -->
+        <g fill="rgba(185,215,255,0.36)">
+          <rect x="611" y="341" width="9" height="12" rx="1.5"/>
+          <rect x="626" y="341" width="9" height="12" rx="1.5" opacity="0.62"/>
+          <rect x="641" y="341" width="9" height="12" rx="1.5"/>
+          <rect x="656" y="341" width="9" height="12" rx="1.5" opacity="0.52"/>
+          <rect x="671" y="341" width="9" height="12" rx="1.5"/>
+          <rect x="686" y="341" width="9" height="12" rx="1.5" opacity="0.68"/>
+          <rect x="701" y="341" width="9" height="12" rx="1.5"/>
+          <rect x="716" y="341" width="9" height="12" rx="1.5" opacity="0.56"/>
+          <rect x="731" y="341" width="9" height="12" rx="1.5"/>
+          <rect x="746" y="341" width="9" height="12" rx="1.5" opacity="0.46"/>
+          <rect x="761" y="341" width="9" height="12" rx="1.5"/>
+          <rect x="776" y="341" width="9" height="12" rx="1.5" opacity="0.6"/>
 
-          <rect x="622" y="370" width="9" height="12" rx="1.5" opacity="0.5"/>
-          <rect x="652" y="370" width="9" height="12" rx="1.5"/>
-          <rect x="667" y="370" width="9" height="12" rx="1.5" opacity="0.65"/>
-          <rect x="697" y="370" width="9" height="12" rx="1.5"/>
-          <rect x="727" y="370" width="9" height="12" rx="1.5" opacity="0.5"/>
-          <rect x="757" y="370" width="9" height="12" rx="1.5"/>
+          <rect x="611" y="362" width="9" height="12" rx="1.5" opacity="0.52"/>
+          <rect x="641" y="362" width="9" height="12" rx="1.5"/>
+          <rect x="656" y="362" width="9" height="12" rx="1.5" opacity="0.64"/>
+          <rect x="686" y="362" width="9" height="12" rx="1.5"/>
+          <rect x="716" y="362" width="9" height="12" rx="1.5" opacity="0.5"/>
+          <rect x="746" y="362" width="9" height="12" rx="1.5"/>
+          <rect x="776" y="362" width="9" height="12" rx="1.5" opacity="0.44"/>
 
-          <rect x="622" y="392" width="9" height="12" rx="1.5"/>
-          <rect x="637" y="392" width="9" height="12" rx="1.5" opacity="0.4"/>
-          <rect x="682" y="392" width="9" height="12" rx="1.5"/>
-          <rect x="712" y="392" width="9" height="12" rx="1.5" opacity="0.6"/>
-          <rect x="742" y="392" width="9" height="12" rx="1.5"/>
-          <rect x="772" y="392" width="9" height="12" rx="1.5" opacity="0.5"/>
+          <rect x="611" y="383" width="9" height="12" rx="1.5"/>
+          <rect x="626" y="383" width="9" height="12" rx="1.5" opacity="0.42"/>
+          <rect x="671" y="383" width="9" height="12" rx="1.5"/>
+          <rect x="701" y="383" width="9" height="12" rx="1.5" opacity="0.58"/>
+          <rect x="731" y="383" width="9" height="12" rx="1.5"/>
+          <rect x="761" y="383" width="9" height="12" rx="1.5" opacity="0.52"/>
 
-          <rect x="622" y="414" width="9" height="12" rx="1.5" opacity="0.6"/>
-          <rect x="667" y="414" width="9" height="12" rx="1.5"/>
-          <rect x="697" y="414" width="9" height="12" rx="1.5" opacity="0.45"/>
-          <rect x="727" y="414" width="9" height="12" rx="1.5"/>
-          <rect x="757" y="414" width="9" height="12" rx="1.5" opacity="0.55"/>
+          <rect x="611" y="404" width="9" height="12" rx="1.5" opacity="0.58"/>
+          <rect x="656" y="404" width="9" height="12" rx="1.5"/>
+          <rect x="686" y="404" width="9" height="12" rx="1.5" opacity="0.46"/>
+          <rect x="716" y="404" width="9" height="12" rx="1.5"/>
+          <rect x="746" y="404" width="9" height="12" rx="1.5" opacity="0.56"/>
 
-          <rect x="622" y="436" width="9" height="12" rx="1.5"/>
-          <rect x="652" y="436" width="9" height="12" rx="1.5" opacity="0.6"/>
-          <rect x="682" y="436" width="9" height="12" rx="1.5"/>
-          <rect x="742" y="436" width="9" height="12" rx="1.5" opacity="0.5"/>
-          <rect x="772" y="436" width="9" height="12" rx="1.5"/>
+          <rect x="611" y="425" width="9" height="12" rx="1.5"/>
+          <rect x="641" y="425" width="9" height="12" rx="1.5" opacity="0.6"/>
+          <rect x="671" y="425" width="9" height="12" rx="1.5"/>
+          <rect x="731" y="425" width="9" height="12" rx="1.5" opacity="0.5"/>
+          <rect x="761" y="425" width="9" height="12" rx="1.5"/>
+          <rect x="776" y="425" width="9" height="12" rx="1.5" opacity="0.44"/>
         </g>
       </g>
 
-      <!-- TOWER 4 — Left mid-rise with stepped crown -->
+      <!-- TOWER 4 — Left mid-rise -->
       <g>
-        <rect x="175" y="390" width="95"  height="340" fill="url(#bD)"/>
-        <rect x="188" y="358" width="69"  height="40"  fill="#112038"/>
-        <rect x="200" y="336" width="45"  height="30"  fill="#142540"/>
-        <!-- Windows T4 -->
-        <g fill="rgba(255,208,90,0.42)" filter="url(#wGlow)">
-          <rect x="182" y="366" width="7" height="10" rx="1"/>
-          <rect x="194" y="366" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="206" y="366" width="7" height="10" rx="1"/>
-          <rect x="218" y="366" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="230" y="366" width="7" height="10" rx="1"/>
-          <rect x="242" y="366" width="7" height="10" rx="1" opacity="0.7"/>
-
-          <rect x="182" y="384" width="7" height="10" rx="1" opacity="0.55"/>
-          <rect x="194" y="384" width="7" height="10" rx="1"/>
-          <rect x="218" y="384" width="7" height="10" rx="1" opacity="0.65"/>
-          <rect x="242" y="384" width="7" height="10" rx="1"/>
-
-          <rect x="182" y="402" width="7" height="10" rx="1"/>
-          <rect x="206" y="402" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="218" y="402" width="7" height="10" rx="1"/>
-          <rect x="242" y="402" width="7" height="10" rx="1" opacity="0.4"/>
-
-          <rect x="182" y="420" width="7" height="10" rx="1" opacity="0.45"/>
-          <rect x="194" y="420" width="7" height="10" rx="1"/>
-          <rect x="230" y="420" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="242" y="420" width="7" height="10" rx="1"/>
-
-          <rect x="182" y="438" width="7" height="10" rx="1"/>
-          <rect x="206" y="438" width="7" height="10" rx="1" opacity="0.55"/>
-          <rect x="218" y="438" width="7" height="10" rx="1"/>
-          <rect x="230" y="438" width="7" height="10" rx="1" opacity="0.4"/>
+        <rect x="168" y="385" width="98" height="345" fill="url(#gD)"/>
+        <rect x="181" y="352" width="72" height="42"  fill="#102038"/>
+        <rect x="193" y="328" width="48" height="32"  fill="#122440"/>
+        <g fill="rgba(255,205,80,0.4)" filter="url(#fWin)">
+          <rect x="177" y="360" width="7" height="10" rx="1"/>
+          <rect x="189" y="360" width="7" height="10" rx="1" opacity="0.6"/>
+          <rect x="201" y="360" width="7" height="10" rx="1"/>
+          <rect x="213" y="360" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="225" y="360" width="7" height="10" rx="1"/>
+          <rect x="237" y="360" width="7" height="10" rx="1" opacity="0.68"/>
+          <rect x="177" y="378" width="7" height="10" rx="1" opacity="0.52"/>
+          <rect x="189" y="378" width="7" height="10" rx="1"/>
+          <rect x="213" y="378" width="7" height="10" rx="1" opacity="0.64"/>
+          <rect x="237" y="378" width="7" height="10" rx="1"/>
+          <rect x="177" y="396" width="7" height="10" rx="1"/>
+          <rect x="201" y="396" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="213" y="396" width="7" height="10" rx="1"/>
+          <rect x="237" y="396" width="7" height="10" rx="1" opacity="0.42"/>
+          <rect x="177" y="414" width="7" height="10" rx="1" opacity="0.46"/>
+          <rect x="189" y="414" width="7" height="10" rx="1"/>
+          <rect x="225" y="414" width="7" height="10" rx="1" opacity="0.58"/>
+          <rect x="237" y="414" width="7" height="10" rx="1"/>
+          <rect x="177" y="432" width="7" height="10" rx="1"/>
+          <rect x="201" y="432" width="7" height="10" rx="1" opacity="0.54"/>
+          <rect x="213" y="432" width="7" height="10" rx="1"/>
         </g>
       </g>
 
-      <!-- TOWER 5 — Far-right glass needle -->
+      <!-- TOWER 5 — Far right glass needle -->
       <g>
-        <rect x="1120" y="295" width="88" height="435" fill="url(#bA)"/>
-        <rect x="1130" y="268" width="68" height="36"  fill="#162e5a"/>
-        <rect x="1140" y="248" width="48" height="28"  fill="#1a3568"/>
-        <!-- Needle -->
-        <line x1="1164" y1="248" x2="1164" y2="225" stroke="#162d56" stroke-width="3"/>
-        <line x1="1164" y1="225" x2="1164" y2="218" stroke="rgba(74,127,255,0.9)" stroke-width="2"/>
-        <!-- Windows T5 -->
-        <g fill="rgba(155,198,255,0.42)">
-          <rect x="1134" y="275" width="7" height="10" rx="1"/>
-          <rect x="1146" y="275" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="1158" y="275" width="7" height="10" rx="1"/>
-          <rect x="1170" y="275" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="1182" y="275" width="7" height="10" rx="1"/>
-
-          <rect x="1134" y="293" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="1158" y="293" width="7" height="10" rx="1"/>
-          <rect x="1182" y="293" width="7" height="10" rx="1" opacity="0.65"/>
-
-          <rect x="1134" y="311" width="7" height="10" rx="1"/>
-          <rect x="1146" y="311" width="7" height="10" rx="1" opacity="0.4"/>
-          <rect x="1170" y="311" width="7" height="10" rx="1"/>
-          <rect x="1182" y="311" width="7" height="10" rx="1" opacity="0.55"/>
-
-          <rect x="1134" y="329" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="1158" y="329" width="7" height="10" rx="1"/>
-          <rect x="1182" y="329" width="7" height="10" rx="1" opacity="0.4"/>
-
-          <rect x="1134" y="347" width="7" height="10" rx="1"/>
-          <rect x="1146" y="347" width="7" height="10" rx="1" opacity="0.55"/>
-          <rect x="1170" y="347" width="7" height="10" rx="1"/>
-
-          <rect x="1134" y="365" width="7" height="10" rx="1" opacity="0.45"/>
-          <rect x="1158" y="365" width="7" height="10" rx="1"/>
-          <rect x="1182" y="365" width="7" height="10" rx="1" opacity="0.6"/>
-
-          <rect x="1134" y="383" width="7" height="10" rx="1"/>
-          <rect x="1146" y="383" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="1170" y="383" width="7" height="10" rx="1" opacity="0.4"/>
-          <rect x="1182" y="383" width="7" height="10" rx="1"/>
+        <rect x="1110" y="290" width="92" height="440" fill="url(#gA)"/>
+        <rect x="1121" y="262" width="70" height="38"  fill="#162e5c"/>
+        <rect x="1131" y="240" width="50" height="30"  fill="#1a3870"/>
+        <line x1="1156" y1="240" x2="1156" y2="215" stroke="#162c54" stroke-width="3"/>
+        <line x1="1156" y1="215" x2="1156" y2="207" stroke="rgba(74,130,255,0.9)" stroke-width="2"/>
+        <circle cx="1156" cy="206" r="3" fill="rgba(74,130,255,0.8)"/>
+        <g fill="rgba(148,194,255,0.42)">
+          <rect x="1126" y="270" width="7" height="10" rx="1"/>
+          <rect x="1138" y="270" width="7" height="10" rx="1" opacity="0.62"/>
+          <rect x="1150" y="270" width="7" height="10" rx="1"/>
+          <rect x="1162" y="270" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="1174" y="270" width="7" height="10" rx="1"/>
+          <rect x="1126" y="288" width="7" height="10" rx="1" opacity="0.52"/>
+          <rect x="1150" y="288" width="7" height="10" rx="1"/>
+          <rect x="1174" y="288" width="7" height="10" rx="1" opacity="0.64"/>
+          <rect x="1126" y="306" width="7" height="10" rx="1"/>
+          <rect x="1138" y="306" width="7" height="10" rx="1" opacity="0.42"/>
+          <rect x="1162" y="306" width="7" height="10" rx="1"/>
+          <rect x="1174" y="306" width="7" height="10" rx="1" opacity="0.56"/>
+          <rect x="1126" y="324" width="7" height="10" rx="1" opacity="0.6"/>
+          <rect x="1150" y="324" width="7" height="10" rx="1"/>
+          <rect x="1174" y="324" width="7" height="10" rx="1" opacity="0.44"/>
+          <rect x="1126" y="342" width="7" height="10" rx="1"/>
+          <rect x="1138" y="342" width="7" height="10" rx="1" opacity="0.55"/>
+          <rect x="1162" y="342" width="7" height="10" rx="1"/>
+          <rect x="1126" y="360" width="7" height="10" rx="1" opacity="0.46"/>
+          <rect x="1150" y="360" width="7" height="10" rx="1"/>
+          <rect x="1174" y="360" width="7" height="10" rx="1" opacity="0.58"/>
+          <rect x="1126" y="378" width="7" height="10" rx="1"/>
+          <rect x="1138" y="378" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="1162" y="378" width="7" height="10" rx="1" opacity="0.42"/>
+          <rect x="1174" y="378" width="7" height="10" rx="1"/>
         </g>
       </g>
 
-      <!-- TOWER 6 — Low-rise podium block left -->
+      <!-- TOWER 6 — Low-rise left podium -->
       <g>
-        <rect x="295" y="460" width="115" height="270" fill="url(#bC)"/>
-        <rect x="305" y="444" width="95"  height="24"  fill="#0e1e38"/>
-        <g fill="rgba(255,200,80,0.35)">
-          <rect x="302" y="451" width="7" height="9" rx="1"/>
-          <rect x="315" y="451" width="7" height="9" rx="1" opacity="0.55"/>
-          <rect x="328" y="451" width="7" height="9" rx="1"/>
-          <rect x="341" y="451" width="7" height="9" rx="1" opacity="0.6"/>
-          <rect x="354" y="451" width="7" height="9" rx="1"/>
-          <rect x="367" y="451" width="7" height="9" rx="1" opacity="0.4"/>
-          <rect x="380" y="451" width="7" height="9" rx="1"/>
-
-          <rect x="302" y="468" width="7" height="9" rx="1" opacity="0.5"/>
-          <rect x="328" y="468" width="7" height="9" rx="1"/>
-          <rect x="354" y="468" width="7" height="9" rx="1" opacity="0.6"/>
-          <rect x="380" y="468" width="7" height="9" rx="1"/>
-
-          <rect x="302" y="485" width="7" height="9" rx="1"/>
-          <rect x="315" y="485" width="7" height="9" rx="1" opacity="0.4"/>
-          <rect x="341" y="485" width="7" height="9" rx="1"/>
-          <rect x="367" y="485" width="7" height="9" rx="1" opacity="0.55"/>
+        <rect x="288" y="454" width="118" height="276" fill="url(#gC)"/>
+        <rect x="300" y="438" width="94"  height="24"  fill="#0e1e38"/>
+        <g fill="rgba(255,200,75,0.36)">
+          <rect x="297" y="445" width="7" height="9" rx="1"/>
+          <rect x="310" y="445" width="7" height="9" rx="1" opacity="0.56"/>
+          <rect x="323" y="445" width="7" height="9" rx="1"/>
+          <rect x="336" y="445" width="7" height="9" rx="1" opacity="0.62"/>
+          <rect x="349" y="445" width="7" height="9" rx="1"/>
+          <rect x="362" y="445" width="7" height="9" rx="1" opacity="0.44"/>
+          <rect x="375" y="445" width="7" height="9" rx="1"/>
+          <rect x="297" y="462" width="7" height="9" rx="1" opacity="0.5"/>
+          <rect x="323" y="462" width="7" height="9" rx="1"/>
+          <rect x="349" y="462" width="7" height="9" rx="1" opacity="0.62"/>
+          <rect x="375" y="462" width="7" height="9" rx="1"/>
+          <rect x="297" y="479" width="7" height="9" rx="1"/>
+          <rect x="310" y="479" width="7" height="9" rx="1" opacity="0.42"/>
+          <rect x="336" y="479" width="7" height="9" rx="1"/>
+          <rect x="362" y="479" width="7" height="9" rx="1" opacity="0.56"/>
         </g>
       </g>
 
-      <!-- TOWER 7 — Right secondary tower -->
+      <!-- TOWER 7 — Right secondary -->
       <g>
-        <rect x="985" y="340" width="95" height="390" fill="url(#bB)"/>
-        <rect x="996" y="315" width="73" height="34"  fill="#142c52"/>
-        <g fill="rgba(140,195,255,0.38)">
-          <rect x="991" y="322" width="7" height="10" rx="1"/>
-          <rect x="1003" y="322" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="1015" y="322" width="7" height="10" rx="1"/>
-          <rect x="1027" y="322" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="1039" y="322" width="7" height="10" rx="1"/>
-          <rect x="1051" y="322" width="7" height="10" rx="1" opacity="0.7"/>
-
-          <rect x="991" y="340" width="7" height="10" rx="1" opacity="0.55"/>
-          <rect x="1015" y="340" width="7" height="10" rx="1"/>
-          <rect x="1039" y="340" width="7" height="10" rx="1" opacity="0.45"/>
-
-          <rect x="991" y="358" width="7" height="10" rx="1"/>
-          <rect x="1003" y="358" width="7" height="10" rx="1" opacity="0.4"/>
-          <rect x="1027" y="358" width="7" height="10" rx="1"/>
-          <rect x="1051" y="358" width="7" height="10" rx="1" opacity="0.6"/>
-
-          <rect x="991" y="376" width="7" height="10" rx="1" opacity="0.5"/>
-          <rect x="1015" y="376" width="7" height="10" rx="1"/>
-          <rect x="1039" y="376" width="7" height="10" rx="1" opacity="0.55"/>
-
-          <rect x="991" y="394" width="7" height="10" rx="1"/>
-          <rect x="1003" y="394" width="7" height="10" rx="1" opacity="0.6"/>
-          <rect x="1051" y="394" width="7" height="10" rx="1"/>
+        <rect x="978" y="332" width="98" height="398" fill="url(#gB)"/>
+        <rect x="990" y="308" width="74" height="32"  fill="#142c52"/>
+        <g fill="rgba(138,192,255,0.38)">
+          <rect x="986" y="316" width="7" height="10" rx="1"/>
+          <rect x="998" y="316" width="7" height="10" rx="1" opacity="0.62"/>
+          <rect x="1010" y="316" width="7" height="10" rx="1"/>
+          <rect x="1022" y="316" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="1034" y="316" width="7" height="10" rx="1"/>
+          <rect x="1046" y="316" width="7" height="10" rx="1" opacity="0.68"/>
+          <rect x="986" y="334" width="7" height="10" rx="1" opacity="0.54"/>
+          <rect x="1010" y="334" width="7" height="10" rx="1"/>
+          <rect x="1034" y="334" width="7" height="10" rx="1" opacity="0.46"/>
+          <rect x="986" y="352" width="7" height="10" rx="1"/>
+          <rect x="998" y="352" width="7" height="10" rx="1" opacity="0.42"/>
+          <rect x="1022" y="352" width="7" height="10" rx="1"/>
+          <rect x="1046" y="352" width="7" height="10" rx="1" opacity="0.58"/>
+          <rect x="986" y="370" width="7" height="10" rx="1" opacity="0.5"/>
+          <rect x="1010" y="370" width="7" height="10" rx="1"/>
+          <rect x="1034" y="370" width="7" height="10" rx="1" opacity="0.56"/>
+          <rect x="986" y="388" width="7" height="10" rx="1"/>
+          <rect x="998" y="388" width="7" height="10" rx="1" opacity="0.6"/>
+          <rect x="1046" y="388" width="7" height="10" rx="1"/>
+          <rect x="986" y="406" width="7" height="10" rx="1" opacity="0.44"/>
+          <rect x="1022" y="406" width="7" height="10" rx="1"/>
+          <rect x="1046" y="406" width="7" height="10" rx="1" opacity="0.52"/>
         </g>
       </g>
 
-      <!-- ═════ GROUND / STREET / WATER ═════ -->
-
-      <!-- Street level -->
-      <rect x="0" y="728" width="1440" height="172" fill="#04090f"/>
-      <!-- Pavement -->
-      <rect x="0" y="728" width="1440" height="18" fill="#070f1c"/>
-      <!-- Road surface -->
-      <rect x="0" y="746" width="1440" height="60"  fill="#040c18"/>
-      <!-- Lane markings -->
-      <g opacity="0.2" fill="rgba(255,255,255,0.7)">
-        <rect x="100"  y="768" width="70" height="2.5" rx="1"/>
-        <rect x="280"  y="768" width="70" height="2.5" rx="1"/>
-        <rect x="460"  y="768" width="70" height="2.5" rx="1"/>
-        <rect x="640"  y="768" width="70" height="2.5" rx="1"/>
-        <rect x="820"  y="768" width="70" height="2.5" rx="1"/>
-        <rect x="1000" y="768" width="70" height="2.5" rx="1"/>
-        <rect x="1180" y="768" width="70" height="2.5" rx="1"/>
-        <rect x="1360" y="768" width="70" height="2.5" rx="1"/>
+      <!-- ═══ STREET LEVEL ═══ -->
+      <!-- Ground plane -->
+      <rect x="0" y="728" width="1440" height="172" fill="#040c18"/>
+      <rect x="0" y="728" width="1440" height="16"  fill="#060e1e"/>
+      <!-- Road -->
+      <rect x="0" y="744" width="1440" height="56"  fill="#030a15"/>
+      <!-- Lane marks -->
+      <g fill="rgba(255,255,255,0.16)">
+        <rect x="90"   y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="270"  y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="450"  y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="630"  y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="810"  y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="990"  y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="1170" y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
+        <rect x="1350" y="764" width="68" height="2.5" rx="1" opacity="0.7"/>
       </g>
+      <!-- Pavement / sidewalk -->
+      <rect x="0" y="800" width="1440" height="18" fill="#060f1e" opacity="0.9"/>
 
-      <!-- Street lamp posts -->
-      <g stroke="#1a3060" stroke-width="2" fill="none">
-        <line x1="340"  y1="728" x2="340"  y2="682"/>
-        <line x1="700"  y1="728" x2="700"  y2="678"/>
-        <line x1="1060" y1="728" x2="1060" y2="682"/>
-      </g>
-      <!-- Lamp bulbs -->
+      <!-- Street lamps -->
       <g>
-        <circle cx="340"  cy="680" r="5" fill="rgba(255,215,80,0.8)"/>
-        <ellipse cx="340"  cy="688" rx="22" ry="7" fill="rgba(255,200,50,0.07)"/>
-        <circle cx="700"  cy="676" r="5" fill="rgba(255,215,80,0.8)"/>
-        <ellipse cx="700"  cy="684" rx="22" ry="7" fill="rgba(255,200,50,0.07)"/>
-        <circle cx="1060" cy="680" r="5" fill="rgba(255,215,80,0.8)"/>
-        <ellipse cx="1060" cy="688" rx="22" ry="7" fill="rgba(255,200,50,0.07)"/>
+        <line x1="328"  y1="728" x2="328"  y2="680" stroke="#162a4a" stroke-width="2.5"/>
+        <path d="M328 680 Q328 672 338 670" stroke="#162a4a" stroke-width="2.5" fill="none"/>
+        <circle cx="340" cy="669" r="5" fill="rgba(255,218,80,0.85)"/>
+        <ellipse cx="340" cy="676" rx="22" ry="7" fill="rgba(255,200,50,0.08)"/>
+
+        <line x1="700"  y1="728" x2="700"  y2="675" stroke="#162a4a" stroke-width="2.5"/>
+        <path d="M700 675 Q700 667 710 665" stroke="#162a4a" stroke-width="2.5" fill="none"/>
+        <circle cx="712" cy="664" r="5" fill="rgba(255,218,80,0.85)"/>
+        <ellipse cx="712" cy="671" rx="22" ry="7" fill="rgba(255,200,50,0.08)"/>
+
+        <line x1="1072" y1="728" x2="1072" y2="680" stroke="#162a4a" stroke-width="2.5"/>
+        <path d="M1072 680 Q1072 672 1082 670" stroke="#162a4a" stroke-width="2.5" fill="none"/>
+        <circle cx="1084" cy="669" r="5" fill="rgba(255,218,80,0.85)"/>
+        <ellipse cx="1084" cy="676" rx="22" ry="7" fill="rgba(255,200,50,0.08)"/>
       </g>
 
-      <!-- Foreground water / harbour -->
-      <rect x="0" y="808" width="1440" height="92" fill="url(#waterG)"/>
-      <!-- Water shimmer lines -->
-      <g stroke="rgba(23,88,224,0.18)" stroke-width="1" fill="none">
-        <path d="M 50 825 Q 120 818 190 825"/>
-        <path d="M 300 832 Q 390 824 480 832"/>
-        <path d="M 580 820 Q 680 812 780 820"/>
-        <path d="M 850 828 Q 950 820 1050 828"/>
-        <path d="M 1100 815 Q 1200 808 1300 815"/>
+      <!-- Water / harbour -->
+      <rect x="0" y="818" width="1440" height="82" fill="url(#gWater)"/>
+      <!-- Water shimmer -->
+      <g stroke="rgba(20,96,232,0.16)" stroke-width="1" fill="none">
+        <path d="M40  832 Q115 824 190 832"/>
+        <path d="M295 838 Q385 830 475 838"/>
+        <path d="M575 825 Q675 817 775 825"/>
+        <path d="M845 833 Q945 825 1045 833"/>
+        <path d="M1095 820 Q1195 812 1295 820"/>
+        <path d="M1350 836 Q1395 830 1440 836"/>
       </g>
-      <!-- Reflection columns of light in water -->
-      <g opacity="0.12">
-        <rect x="484" y="808" width="12" height="80" fill="rgba(255,210,100,0.5)" style="filter:blur(4px)"/>
-        <rect x="888" y="808" width="10" height="80" fill="rgba(155,200,255,0.5)" style="filter:blur(4px)"/>
-        <rect x="694" y="808" width="14" height="92" fill="rgba(23,88,224,0.4)"   style="filter:blur(5px)"/>
+      <!-- Reflection streaks -->
+      <g opacity="0.1">
+        <rect x="474" y="818" width="14" height="72" fill="rgba(255,205,80,0.6)" style="filter:blur(5px)"/>
+        <rect x="892" y="818" width="12" height="72" fill="rgba(148,194,255,0.5)" style="filter:blur(4px)"/>
+        <rect x="700" y="818" width="16" height="82" fill="rgba(20,96,232,0.45)"  style="filter:blur(5px)"/>
+        <rect x="338" y="818" width="10" height="64" fill="rgba(255,218,80,0.4)"  style="filter:blur(4px)"/>
       </g>
 
-      <!-- Horizon atmosphere band -->
-      <rect x="0" y="500" width="1440" height="60"
-            fill="rgba(12,30,58,0.45)"/>
+      <!-- Atmosphere fog band at horizon -->
+      <rect x="0" y="505" width="1440" height="55" fill="rgba(10,28,52,0.42)"/>
     </svg>
 
-    <div class="canvas-vignette"></div>
-    <div class="canvas-grid"></div>
-    <div class="canvas-glow-r"></div>
-    <div class="canvas-glow-b"></div>
-    <div class="canvas-fade-bottom"></div>
-  </div><!-- /canvas -->
+    <div class="bg-vignette"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-bloom-r"></div>
+    <div class="bg-bloom-b"></div>
+    <div class="bg-fade-bottom"></div>
+  </div>
 
-  <!-- Hero content -->
-  <div class="hero-body">
+  <!-- ── Hero content ── -->
+  <div class="hero-wrap">
     <div class="hero-left">
-      <div class="hero-eyebrow">
-        <span class="eyebrow-pip"></span>
+      <div class="eyebrow">
+        <span class="ey-pip"></span>
         Specialist Insurance MGA
       </div>
 
       <h1 class="hero-h1">
-        Where <span class="h1-sky">Complex Risk</span><br/>
-        Meets <span class="h1-gold">Expert</span> Capital
+        Trusted Capital.<br/>
+        <span class="h1-grad">Expert</span> Risk.<br/>
+        <span class="h1-gold">Your Edge.</span>
       </h1>
 
-      <p class="hero-body-copy">
-        Crest MGA bridges the gap between ambitious brokers and top-tier capacity. Our specialist underwriters craft bespoke solutions for property, casualty, and specialty lines — backed by Lloyd's and global carrier partners.
+      <p class="hero-lead">
+        Veritas MGA connects ambitious brokers with best-in-class underwriting capacity. We specialise in complex commercial, property, and specialty lines — backed by Lloyd's syndicates and global reinsurers who trust our rigorous approach to risk.
       </p>
 
-      <div class="hero-actions">
-        <a href="#" class="btn-cta btn-solid">
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-fill">
           Explore Solutions
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#" class="btn-cta btn-ghost">
+        <a href="#" class="btn btn-outline">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
-          Talk to an Underwriter
+          Speak to an Underwriter
         </a>
       </div>
 
-      <div class="hero-metrics">
-        <div class="metric">
-          <span class="metric-n">$<em>5.8</em>B</span>
-          <span class="metric-l">GWP Placed</span>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-v" id="stat1">$<em>0</em>B</span>
+          <span class="stat-l">GWP Placed</span>
         </div>
-        <div class="metric">
-          <span class="metric-n">22<em>+</em></span>
-          <span class="metric-l">Carrier Partners</span>
+        <div class="stat">
+          <span class="stat-v" id="stat2"><em>0</em>+</span>
+          <span class="stat-l">Carrier Partners</span>
         </div>
-        <div class="metric">
-          <span class="metric-n"><em>A</em>+</span>
-          <span class="metric-l">AM Best Rating</span>
+        <div class="stat">
+          <span class="stat-v"><em>A+</em></span>
+          <span class="stat-l">AM Best Rated</span>
         </div>
       </div>
     </div>
 
-    <!-- Right: floating UI panel -->
+    <!-- Right floating glass panel -->
     <div class="hero-right">
       <div class="hero-panel">
 
-        <!-- Card 1: Active policy -->
-        <div class="glass">
-          <div class="glass-label">Active Submission</div>
-          <div class="glass-row">
+        <div class="glass-card">
+          <div class="gc-lbl">Latest Submission</div>
+          <div class="gc-row">
             <div>
-              <div class="glass-title">Commercial Property</div>
-              <div class="glass-sub">Ref: CRT-2024-09142 &nbsp;·&nbsp; Lloyd's Syndicate</div>
+              <div class="gc-title">Commercial Property</div>
+              <div class="gc-sub">Ref: VRT-2024-10284 · Lloyd's Syndicate 2468</div>
             </div>
-            <span class="badge badge-green">✓ Bound</span>
+            <span class="badge b-green">✓ Bound</span>
           </div>
-          <hr class="hr-glass"/>
-          <div class="data-row"><span class="data-k">Total Insured Value</span><span class="data-v">$42,500,000</span></div>
-          <div class="data-row"><span class="data-k">Annual Premium</span><span class="data-v">$218,400</span></div>
-          <div class="data-row"><span class="data-k">Risk Score</span><span class="data-v data-v-g">Excellent — 96/100</span></div>
-          <div class="data-row"><span class="data-k">Coverage Class</span><span class="data-v">All-Risk Property</span></div>
-          <div class="prog-meta">
-            <span>Policy Year Progress</span>
-            <span>74%</span>
+          <div class="gc-hr"></div>
+          <div class="gc-data"><span class="gc-dk">Total Insured Value</span><span class="gc-dv">$38,750,000</span></div>
+          <div class="gc-data"><span class="gc-dk">Annual Premium</span><span class="gc-dv">$196,800</span></div>
+          <div class="gc-data"><span class="gc-dk">Risk Grade</span><span class="gc-dv gc-dv-g">Excellent — 97/100</span></div>
+          <div class="gc-data"><span class="gc-dk">Coverage Class</span><span class="gc-dv">All-Risk Property</span></div>
+          <div class="prog-hd">
+            <span>Policy Year Elapsed</span>
+            <span>78%</span>
           </div>
           <div class="prog-track">
-            <div class="prog-fill" style="width:74%"></div>
+            <div class="prog-fill" style="width:78%"></div>
           </div>
         </div>
 
-        <!-- Card 2: market access chips -->
-        <div class="glass">
-          <div class="glass-label">Market Access</div>
-          <div class="chips">
+        <div class="glass-card">
+          <div class="gc-lbl">Market Access</div>
+          <div class="chip-row">
             <span class="chip">Lloyd's of London</span>
-            <span class="chip">Swiss Re</span>
             <span class="chip">Munich Re</span>
+            <span class="chip">Swiss Re</span>
             <span class="chip">AXA XL</span>
             <span class="chip">Everest Re</span>
-            <span class="chip">+17 more</span>
+            <span class="chip">+19 Carriers</span>
           </div>
-          <hr class="hr-glass"/>
-          <div class="glass-row" style="gap:10px">
+          <div class="gc-hr"></div>
+          <div class="live-row">
             <div class="live-dot"></div>
-            <span class="live-text">Live quoting portal — 4hr turnaround</span>
+            <span class="live-txt">Portal live — indicative terms within 4 hrs</span>
           </div>
         </div>
 
@@ -1326,83 +1218,81 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════
      FEATURES
-═══════════════════════════════════════════════ -->
+═══════════════════════════════════════ -->
 <section class="features" id="features">
   <div class="feat-inner">
 
-    <div class="sec-hdr">
-      <div class="sec-chip">Why Crest MGA</div>
-      <h2 class="sec-h2">Built for brokers who<br/><em>demand</em> more than standard</h2>
-      <p class="sec-lead">
-        Specialist expertise, market-leading appetite and a technology-enabled submission process — giving you the confidence to place even your most complex risks.
+    <div class="sec-head">
+      <div class="sec-chip">Why Veritas MGA</div>
+      <h2 class="sec-h2">
+        The underwriting partner<br/>brokers <em>trust</em> for complex risk
+      </h2>
+      <p class="sec-p">
+        Decades of specialist expertise, market-leading appetite and a frictionless digital submission process — the three pillars that set Veritas apart in a crowded marketplace.
       </p>
     </div>
 
-    <div class="cards-grid" id="cardsGrid">
+    <div class="cards" id="fcGrid">
 
       <!-- Card 1 -->
-      <div class="feat-card">
-        <div class="top-bar tb-blue"></div>
-        <span class="ghost-num">01</span>
-
-        <div class="icon-box ib-blue">
+      <div class="fc">
+        <div class="fc-bar bar-b"></div>
+        <span class="wm">01</span>
+        <div class="ic-box ic-b">
           <svg viewBox="0 0 24 24">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <polyline points="9 12 11 14 15 10"/>
           </svg>
         </div>
-
-        <h3 class="card-h">Specialist Underwriting</h3>
-        <p class="card-p">
-          Our team carries an average of 16 years of market experience across property, casualty, marine, and specialty lines. We thrive on the risks that others turn away — providing considered, defensible terms on complex accounts.
+        <h3 class="fc-h">Specialist Underwriting</h3>
+        <p class="fc-p">
+          Our underwriters average 17 years of market experience across property, casualty, marine, and specialty lines. We are built for the risks others decline — delivering considered, defensible terms where generic markets fall short.
         </p>
-        <div class="pill-row">
-          <span class="pill p-blue">Property</span>
-          <span class="pill p-blue">Casualty</span>
-          <span class="pill p-blue">Marine</span>
-          <span class="pill p-blue">Specialty</span>
+        <div class="pills">
+          <span class="pill pi-b">Property</span>
+          <span class="pill pi-b">Casualty</span>
+          <span class="pill pi-b">Marine</span>
+          <span class="pill pi-b">D&amp;O</span>
+          <span class="pill pi-b">Cyber</span>
         </div>
-        <a href="#" class="learn-link ll-blue">
+        <a href="#" class="fc-link lk-b">
           View our appetite
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
 
       <!-- Card 2 -->
-      <div class="feat-card">
-        <div class="top-bar tb-gold"></div>
-        <span class="ghost-num">02</span>
-
-        <div class="icon-box ib-gold">
+      <div class="fc">
+        <div class="fc-bar bar-g"></div>
+        <span class="wm">02</span>
+        <div class="ic-box ic-g">
           <svg viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10"/>
             <polyline points="12 6 12 12 16 14"/>
           </svg>
         </div>
-
-        <h3 class="card-h">4-Hour Quote Turnaround</h3>
-        <p class="card-p">
-          Submit via our broker portal and receive firm indicative terms within four business hours on eligible risks. Straight-through processing on standard submissions means less friction and more time for your clients.
+        <h3 class="fc-h">4-Hour Turnaround</h3>
+        <p class="fc-p">
+          Submit through our broker portal and receive firm indicative terms within four business hours on eligible risks. Straight-through processing on standard accounts eliminates friction so you can focus on your clients, not the process.
         </p>
-        <div class="pill-row">
-          <span class="pill p-gold">Fast Bind</span>
-          <span class="pill p-gold">Digital Portal</span>
-          <span class="pill p-gold">API Access</span>
+        <div class="pills">
+          <span class="pill pi-g">Fast Bind</span>
+          <span class="pill pi-g">Digital Portal</span>
+          <span class="pill pi-g">API Integration</span>
         </div>
-        <a href="#" class="learn-link ll-gold">
+        <a href="#" class="fc-link lk-g">
           Access the portal
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
 
       <!-- Card 3 -->
-      <div class="feat-card">
-        <div class="top-bar tb-teal"></div>
-        <span class="ghost-num">03</span>
-
-        <div class="icon-box ib-teal">
+      <div class="fc">
+        <div class="fc-bar bar-t"></div>
+        <span class="wm">03</span>
+        <div class="ic-box ic-t">
           <svg viewBox="0 0 24 24">
             <line x1="18" y1="20" x2="18" y2="10"/>
             <line x1="12" y1="20" x2="12" y2="4"/>
@@ -1410,17 +1300,16 @@
             <polyline points="2 20 22 20"/>
           </svg>
         </div>
-
-        <h3 class="card-h">Data-Driven Risk Analytics</h3>
-        <p class="card-p">
-          Crest's proprietary scoring engine benchmarks every submission across 60 variables, enabling consistent and transparent pricing. Our loss-ratio analytics give carrier partners the confidence to support broader, more innovative appetite.
+        <h3 class="fc-h">Proprietary Risk Analytics</h3>
+        <p class="fc-p">
+          Our scoring engine benchmarks every submission across 65 variables, delivering transparent, consistent, and defensible pricing. Real-time loss-ratio reporting gives carrier partners the confidence to back innovative appetite.
         </p>
-        <div class="pill-row">
-          <span class="pill p-teal">Predictive Scoring</span>
-          <span class="pill p-teal">Transparent Pricing</span>
-          <span class="pill p-teal">Live Reporting</span>
+        <div class="pills">
+          <span class="pill pi-t">Predictive Pricing</span>
+          <span class="pill pi-t">Live Dashboards</span>
+          <span class="pill pi-t">Carrier Reporting</span>
         </div>
-        <a href="#" class="learn-link ll-teal">
+        <a href="#" class="fc-link lk-t">
           Explore analytics
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -1430,37 +1319,40 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+<!-- ═══════════════════════════════════════
      FOOTER
-═══════════════════════════════════════════════ -->
+═══════════════════════════════════════ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <!-- Repeat logo in footer -->
-      <a href="#" class="logo-link" aria-label="Crest MGA">
-        <svg class="logo-mark" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <div class="ft-inner">
+    <div class="ft-top">
+      <a href="#" class="brand" aria-label="Veritas MGA">
+        <svg class="brand-icon" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <linearGradient id="fShLg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#2e7bff"/>
-              <stop offset="100%" stop-color="#0e3fb5"/>
+            <linearGradient id="fLg1" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2e7fff"/>
+              <stop offset="100%" stop-color="#0c3dbf"/>
             </linearGradient>
-            <linearGradient id="fInnerLg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <linearGradient id="fLg2" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
               <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
             </linearGradient>
           </defs>
-          <path d="M22 2.5L3.5 9.8V22c0 10.5 8 19.4 18.5 21.2C32.5 41.4 40.5 32.5 40.5 22V9.8L22 2.5z" fill="url(#fShLg)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-          <path d="M22 6L7 12.5V22c0 8.8 6.5 17 15 19C30.5 39 37 30.8 37 22V12.5L22 6z" fill="url(#fInnerLg)"/>
-          <path d="M12 24 Q16 19 22 24 Q28 29 34 24" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <path d="M12 28.5 Q16 23.5 22 28.5 Q28 33.5 34 28.5" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-          <rect x="14" y="12" width="16" height="1.5" rx="0.75" fill="rgba(218,168,78,0.85)"/>
+          <path d="M23 2L4 9.5V22c0 10.8 8.2 20 19 21.8C33.8 42 42 32.8 42 22V9.5L23 2z"
+                fill="url(#fLg1)" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <path d="M23 5.5L7 12V22c0 9 6.8 16.8 16 18.5C32.2 38.8 39 31 39 22V12L23 5.5z"
+                fill="url(#fLg2)"/>
+          <line x1="14" y1="19" x2="32" y2="19" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="23" y1="13" x2="23" y2="33" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M14 19 l-4 6 h8 z" stroke="white" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <path d="M32 19 l-4 6 h8 z" stroke="white" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+          <rect x="20" y="31.5" width="6" height="2" rx="1" fill="rgba(220,170,80,0.9)"/>
         </svg>
-        <div class="logo-copy">
-          <span class="logo-name">Crest</span>
-          <span class="logo-descriptor">Managing General Agency</span>
+        <div class="brand-text">
+          <span class="brand-name">Veritas</span>
+          <span class="brand-sub">Managing General Agency</span>
         </div>
       </a>
-      <nav class="foot-links" aria-label="Footer navigation">
+      <nav class="ft-nav" aria-label="Footer links">
         <a href="#">Solutions</a>
         <a href="#">Markets</a>
         <a href="#">Brokers</a>
@@ -1470,9 +1362,9 @@
         <a href="#">Contact</a>
       </nav>
     </div>
-    <div class="footer-bottom">
-      <p class="foot-copy">© 2024 Crest MGA, Inc. All rights reserved. Licensed in all 50 states and Lloyd's accredited.</p>
-      <nav class="foot-legal" aria-label="Legal links">
+    <div class="ft-bot">
+      <p class="ft-copy">© 2024 Veritas MGA, Inc. All rights reserved. Licensed in all 50 states · Lloyd's Accredited Coverholder</p>
+      <nav class="ft-legal" aria-label="Legal links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
         <a href="#">Regulatory Notices</a>
@@ -1481,101 +1373,61 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════════
-     JAVASCRIPT
-═══════════════════════════════════════════════ -->
 <script>
-  // ── Navbar scroll behaviour
-  const nav = document.getElementById('mainNav');
+  /* ── Navbar stick on scroll ── */
+  const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('pinned', window.scrollY > 24);
+    nav.classList.toggle('stuck', window.scrollY > 20);
   }, { passive: true });
 
-  // ── Hamburger toggle
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('open');
-    document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+  /* ── Hamburger ── */
+  const burger  = document.getElementById('burger');
+  const navList = document.getElementById('navList');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('on');
+    navList.classList.toggle('open');
+    document.body.style.overflow = navList.classList.contains('open') ? 'hidden' : '';
   });
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('on');
+    navList.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 
-  // Close on link click (mobile)
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // ── Intersection Observer for feature cards
-  const cards = document.querySelectorAll('.feat-card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('appeared');
-        observer.unobserve(entry.target);
+  /* ── Feature card scroll reveal ── */
+  const fcObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        fcObs.unobserve(e.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.14 });
+  document.querySelectorAll('.fc').forEach(c => fcObs.observe(c));
 
-  cards.forEach(card => observer.observe(card));
-
-  // ── Animated counters for hero metrics
-  function animateCounter(el, target, suffix, duration) {
-    const isFloat   = target % 1 !== 0;
-    const start     = performance.now();
-    const update    = (now) => {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased    = 1 - Math.pow(1 - progress, 3);
-      const value    = eased * target;
-      el.textContent = isFloat ? value.toFixed(1) + suffix : Math.round(value) + suffix;
-      if (progress < 1) requestAnimationFrame(update);
+  /* ── Animated stat counters ── */
+  function countUp(selector, end, decimals, duration) {
+    const el = document.querySelector(selector + ' em');
+    if (!el) return;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = (ease * end).toFixed(decimals);
+      if (p < 1) requestAnimationFrame(tick);
     };
-    requestAnimationFrame(update);
+    requestAnimationFrame(tick);
   }
 
-  // Run counters when hero metrics enter view
-  const metricEls = document.querySelectorAll('.metric-n');
-  const metricData = [
-    { el: metricEls[0], target: 5.8, suffix: 'B', prefix: '$' },
-    { el: metricEls[1], target: 22,  suffix: '+', prefix: '' },
-    { el: metricEls[2], target: null, text: '<em>A</em>+' },
-  ];
-
-  let countersRun = false;
-  const heroObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !countersRun) {
-      countersRun = true;
-      // Metric 1
-      const m0 = metricEls[0];
-      const em0 = m0.querySelector('em');
-      animateCounterEl(m0, em0, 5.8, true, '$', 'B', 1600);
-      // Metric 2
-      const m1 = metricEls[1];
-      const em1 = m1.querySelector('em');
-      animateCounterEl(m1, em1, 22, false, '', '+', 1400);
+  let statsRan = false;
+  const statsEl = document.querySelector('.hero-stats');
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !statsRan) {
+      statsRan = true;
+      countUp('#stat1', 6.2, 1, 1800);
+      countUp('#stat2', 24,  0, 1600);
     }
-  }, { threshold: 0.5 });
-
-  const heroSection = document.querySelector('.hero-metrics');
-  if (heroSection) heroObserver.observe(heroSection);
-
-  function animateCounterEl(wrapper, emEl, target, isFloat, prefix, suffix, duration) {
-    if (!emEl) return;
-    const start  = performance.now();
-    const update = (now) => {
-      const p   = Math.min((now - start) / duration, 1);
-      const e   = 1 - Math.pow(1 - p, 3);
-      const val = e * target;
-      emEl.textContent = isFloat ? val.toFixed(1) : Math.round(val);
-      if (p < 1) requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);
-  }
+  }, { threshold: 0.5 }).observe(statsEl);
 </script>
 </body>
 </html>
